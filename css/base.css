@@ -20,7 +20,7 @@ html,body{
 	src: url('../fonts/Carnevalee Freakshow.ttf')
 }
 *{
-	color: #DDD;
+	color: #000;
 }
 .abswrap{
 	position: absolute;
@@ -141,7 +141,7 @@ html,body{
 	text-align:center;
 	width:19%;
 	float: left;
-	margin: 0 5%;
+	margin: 5% 5%;
 	background:url(../img/blackbg.png);
 	background-size: 100% 100%;
 	height:20px;
@@ -149,8 +149,8 @@ html,body{
 }
 .homefoot .caption{
 	position: absolute;
-	bottom: 0;
 	width: 60%;
+	top :5px;
 	text-align: center;
 	font: 120% MouseMemoirs;
 	color: #111;
@@ -188,15 +188,22 @@ html,body{
 	width: 100%;
 	height: 60%;
 	overflow: auto;
+	position:absolute;
 }
 .teambottom{
-	background: rgba(80,80,80,0.65);
-	border: dashed 1px 0;
+	background: rgba(0,0,0,0.65);
+	border: solid 1px 0;
 	width: 100%;
+	top:-moz-calc(60% + 31px);
+	top:-webkit-calc(60% + 31px);
+	top:calc(60% + 31px);
 	height: 40%;
-	overflow: auto;
+	z-index: 2;
+	position:absolute;
+	overflow:hidden;
 }
 .teamtop .card{
+	margin-left:5%;
 	text-align: center;
 	position: relative;
 	height: 315px;
@@ -210,14 +217,16 @@ html,body{
 .teamtop .card img{
 	width: 150px;
 }
-.teamtop .card .card-title{
+.teamtop .card .cardwrap .card-title{
 	position: absolute;
+	background: url('../img/whitebg.png');
+	background-size:100% 100%;
 	bottom: 0;
 	left: 0;
 	width: 100%;
 	text-shadow: 0 0 15px #000;
 	text-align: center;
-	color: #FFF;
+	color: #000;
 	font: 150% Carnevalee;
 	padding: 8px;
 }
@@ -241,6 +250,8 @@ text-shadow: 0 0 15px #000;
 	height: 100%;
 	overflow: auto;
 	float:left;
+	position:absolute;
+	z-index: 1;
 	background: url(../img/sidebarbg.png) repeat-y; 
 -webkit-background-size: 100% 100%;
    -moz-background-size: 100% 100%;
@@ -252,17 +263,20 @@ text-shadow: 0 0 15px #000;
 	margin: 0;
 }
 .sidebar li{
-	color: #222;
 	list-style-type: none;
-	padding: 15px;
+	text-align: center;
+	padding: 10px;
 	font: 120% Carnevalee;
 }
 .sidebar li:hover{
-	color: #600;
+	color: #fff;
 	cursor: pointer;
 }
-.sidebar .evt-sel{background: #EEE; }
-.details{width: 80%;height: 100%;overflow: auto;float:left;}
+.evt-sel{
+color: #fff;
+}
+
+.details{width: 85%; height: 100%; z-index:0; overflow: auto;margin-left:15%; position:absolute}
 .details .abst{
 	font: 120% Allan;
 	padding: 70px;
@@ -270,15 +284,15 @@ text-shadow: 0 0 15px #000;
 }
 .details .imgdiv{
 	width:100%;
-	max-height: 300px;
-	overflow: auto;
+	max-height: 400px;
+	overflow: hidden;
 }
 .details .img{width:100%; }
 .details .title {
 	font: 250% Carnevalee;
 	text-align: center;
 	color: rgb(236, 220, 136);
-	padding-top: 20px;
+	padding-top: 5x;
 }
 #sponsors{margin: 50px; }
 #sponsors img{
@@ -292,12 +306,27 @@ text-shadow: 0 0 15px #000;
 }
 .themedesc{
 	text-align: center;
+	background: url('../img/redbg.png') no-repeat;
+	background-size: 100%;
 	font: 150% MouseMemoirs;
 	color: #022563;
 	padding: 30px 100px;
 	height: 50%;
 }
 .themedesc p{
+	color: #09C;
+}
+.about{
+	text-align: center;
+	background: url('../img/redbg.png') no-repeat;
+	background-size: 100% 80%;
+	font: 150% MouseMemoirs;
+	color: #022563;
+	margin-top:10%;
+	padding: 30px 200px;
+	height:80%;
+}
+.about p{
 	color: #09C;
 }
 #social{
