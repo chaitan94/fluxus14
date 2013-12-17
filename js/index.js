@@ -5,7 +5,8 @@ var preloadimgs = [
 	'img/gateclosed.png',
 	'img/gateopen.png',
 	'img/sidebarbg.png',
-	'img/sidebarbg2.png'
+	'img/sidebarbg2.png',
+	'img/homemask.png'
 ]
 var imgs = [];
 for (var i = 0; i < preloadimgs.length; i++) {
@@ -41,11 +42,14 @@ window.onload = function(){
 			$('#preloader').fadeOut(200);
 			$(window).off("mousemove",gateevent);
 		});
-		$('#navbar ul li').click(function(){openCntPg($(this)[0].dataset.name); });
-	});
+		$('#navbar ul li').click(function(){
+					$('#navbar ul li').removeClass("active");               
+   					$(this).addClass("active");
+					openCntPg($(this)[0].dataset.name); });
+					});
 	$(document).keyup(function(e){if(e.which==27){animateOnce('#modals > div','bounceOut',function(){$('#modals > div').hide();});} });
 	$('.modal-close').click(function(e){animateOnce('#modals > div','bounceOut',function(){$('#modals > div').hide();});});
-	$('#loading').fadeIn();
+	$('#loading').fadeIn(100);
 };
 
 var animateOnce = function(a,b,c){
@@ -89,7 +93,7 @@ var topic = function(titletext,name,img,hoverimg){
 	this.dom.onmouseenter = function(e) {
 		// $("#"+self.dom.id+" img")[0].src = self.hoverimg.src;
 		animateOnce("#"+self.dom.id+" img",'flip');
-		$("#"+self.dom.id+" .topic-title")[0].style.color = "#000";
+		$("#"+self.dom.id+" .topic-title")[0].style.color = "rgb(0,0,0)";
 	};
 	this.dom.onmouseleave = function(e) {
 		// $("#"+self.dom.id+" img")[0].src = self.img.src;
@@ -99,19 +103,19 @@ var topic = function(titletext,name,img,hoverimg){
 		animateOnce("#"+self.dom.id,'bounceOutUp',function(){
 			$(this).hide();
 			openCntPg(self.name);
-			$(this).show(1000);
+			$(this).show(100);
 		});
 	};
 	$(this.dom).appendTo("#home");
 }
 var topics = [
-	new topic("Team Fluxus","team","team.png","teamhover.png"),
-	new topic("Social Cause","social","social.png","socialhover.png"),
-	new topic("Culturals","cult","cult.png","culthover.png"),
-	new topic("Pro Shows","proshows","proshows.png","proshowshover.png"),
-	new topic("Technicals","tech","tech.png","techhover.png"),
-	new topic("Workshops","workshop","workshop.png","workshophover.png"),
-	new topic("The Desi Carnival","theme","theme.png","themehover.png")
+	new topic("Team Fluxus","team","team.png","team.png"),
+	new topic("Social Cause","social","social.png","social.png"),
+	new topic("Performing Arts","cult","cult.png","cult.png"),
+	new topic("Pro Shows","proshows","proshows.png","proshows.png"),
+	new topic("Competitions","tech","tech.png","tech.png"),
+	new topic("Workshops","workshop","workshop.png","workshop.png"),
+	new topic("The Desi Carnival","theme","theme.png","theme.png")
 ];
 var updateTopicPos = function(){
 	var sa = 39*Math.PI/180;
@@ -143,13 +147,13 @@ function openCntPg(a){
 			case "tech":
 			case "cult":
 			case "workshop":
-			// case "proshows":
+			case "proshows":
 				events.open(a);
 				break;
 			default:
 				events.current = 0;
-				$("#content > div").fadeOut(500);
-				setTimeout(function(){$("#"+a).fadeIn(500);},510);
+				$("#content > div").hide();
+				setTimeout(function(){$("#"+a).fadeIn(300);},10);
 		}
 		chnginCnt = false;
 	}
@@ -171,7 +175,7 @@ var events = {
 			}
 		}else{
 			events.current = -1;
-			$("#content > div").fadeOut(500);
+			$("#content > div").hide();
 			$("#events").show(0);
 			events.load(a);
 				$("#events .sidebar")[0].style.cssFloat='left';
@@ -186,24 +190,24 @@ var events = {
 		switch(a){
 			case "proshows":
 				$("#events")[0].style.background="rgba(5,10,0,0.85)";
-				jsonfile='https://googledrive.com/host/0BzIWIU3qCj3beUxNVHNyQ1lOdWs/proshows.json'
-				//jsonfile = 'new/data/proshows.json';
+				//jsonfile='https://googledrive.com/host/0BzIWIU3qCj3beUxNVHNyQ1lOdWs/proshows.json'
+				jsonfile = 'data/proshows.json';
 				break;
 			case "tech":
 				$("#events")[0].style.background="rgba(5,10,10,0.85)";
-				jsonfile='https://googledrive.com/host/0BzIWIU3qCj3beUxNVHNyQ1lOdWs/tech.json'
-				//jsonfile = 'new/data/tech.json';
+				//jsonfile='https://googledrive.com/host/0BzIWIU3qCj3beUxNVHNyQ1lOdWs/tech.json'
+				jsonfile = 'data/tech.json';
 				break;
 			case "workshop":
 				$("#events")[0].style.background="rgba(5,0,10,0.85)";
-				jsonfile='https://googledrive.com/host/0BzIWIU3qCj3beUxNVHNyQ1lOdWs/workshop.json'
-				//jsonfile = 'new/data/workshop.json';
+				//jsonfile='https://googledrive.com/host/0BzIWIU3qCj3beUxNVHNyQ1lOdWs/workshop.json'
+				jsonfile = 'data/workshop.json';
 				break;
 			case "cult":
 				$("#events")[0].style.background="rgba(15,0,0,0.85)";
-				jsonfile='https://googledrive.com/host/0BzIWIU3qCj3beUxNVHNyQ1lOdWs/cult.json'
+				//jsonfile='https://googledrive.com/host/0BzIWIU3qCj3beUxNVHNyQ1lOdWs/cult.json'
 				// jsonfile = 'https://googledrive.com/host/0B7gpUuZnCjpdVHRwWVgzZGt2bWM/events.json';
-				//jsonfile = 'new/data/cult.json';
+				jsonfile = 'data/cult.json';
 				break;
 		}
 		$("#events .sidebar").html("<ul></ul>");
@@ -222,7 +226,7 @@ var events = {
 				$("#events .sidebar ul li").click(function(){
 					$("#events .sidebar ul li").removeClass('evt-sel');
 					var t = $(this);
-					
+					//$(this)[0].style.backgroundImage = 'url(img/linetop.png)';		
 					console.log(t);
 					fillDetails(t[0].dataset.id);
 					t.addClass('evt-sel');
@@ -247,11 +251,12 @@ $(".teamtop .sidebar ul li").removeClass('evt-sel');
 var index = Math.floor(($('.teamtop .details').scrollTop()+100)/500);
 $($(".teamtop .sidebar ul li")[index]).addClass('evt-sel');
 });
+/*
 $(window).resize(function(){
 	if(window.innerWidth<800) window.open('http://flux.src/mobile','_self');
 	updateTopicPos();
 });
-
+*/
 $("#regForm").submit(function(){
 	$.post('ajax/register.php', $(this).serializeArray(), function(data) {
 		alert(data);
@@ -285,11 +290,11 @@ function atom(x,y,r){
 function fillDetails(index){
 var w = events.currentJSON[index];
 	animateOnce("#events .details",'slideOutUp',function(){
+						$("#events .img")[0].src = w.img;
 						$("#events .title").html(w.title);
-						$("#events .img")[0].src = "http://lorempixel.com/700/300/technics";
 						$("#events .abst").html(w.abstract);
 						if(w.rules)
-							$("#events .abst").append('<br><br><div style="font: 120% Carnevalee;">RULES</div>'+w.rules);
+							$("#events .abst").append('<br><br><div style="font: 120% Carnevalee;color:rgb(236,220,136);">RULES</div>'+w.rules);
 						$("#events .abst").append(w.etc);
 						animateOnce("#events .imgdiv",'slideInLeft');
 						animateOnce("#events .abst",'slideInRight');
