@@ -15,6 +15,10 @@ html,body{
 	font-family: Valera;
 	src: url('../fonts/VarelaRound-Regular.ttf')
 }
+@font-face{
+	font-family: AYearWithoutRain;
+	src: url('../fonts/AYearWithoutRain.ttf')
+}
 .abswrap{
 	position: absolute;
 	top: 0;
@@ -82,6 +86,11 @@ html,body{
 	cursor: pointer;
 	color:rgba(255,255,0,0.8);	
 }
+
+#navbar ul a{
+text-decoration:none;
+color:white;
+}
 .active{
 background-color: rgba(0,0,0,0.7); 
 }
@@ -127,11 +136,16 @@ background:rgba(200,200,200,0.6);
 	height:150px;
 	padding: 2%;
 }
+
+.homefoot .side a{color:white;}
+.homefoot .side a:hover{color:rgb(210,106,0);}
+
 .homefoot .middle{
 	float: left;
 	height: 100%;
 	width: 60%;
 }
+#hyper a:hover{color:rgb(210,106,0);}
 .homefoot .middiv{
 	font: 170% MouseMemoirs;
 	color: #fff;
@@ -144,6 +158,8 @@ background:rgba(200,200,200,0.6);
 	padding-top:1%;
 	padding-bottom:2%;
 }
+.homefoot .middiv a{color:white;}
+.homefoot .middiv a:hover{color:rgb(210,106,0);}
 .homefoot .caption{
 	border-top: solid 1px black;
 	margin-left:5%;
@@ -190,167 +206,17 @@ top:95%;
 left:33%;
 font: 140% MouseMemoirs;
 }
-.teamtop{
-	background: rgba(0,0,0,0.65);
-	width: 100%;
-	height: 60%;
-	overflow: hidden;
-	position:absolute;
-}
-.teambottom{
-	background: rgba(80,80,80,0.65);
-	border-top: solid 1px 0;
-	border-bottom: solid 1px 0;
-	width: 100%;
-	top:-moz-calc(60% + 15px);
-	top:-webkit-calc(60% + 15px);
-	top:calc(60% + 15px);
-	height: 32%;
-	z-index: 2;
-	position:absolute;
-	overflow:hidden;
-}
-.teamtop .card{
-	margin-left:10%;
-	text-align: center;
-	position: relative;
-	height: 300px;
-	float: left;
-	font: 120% MouseMemoirs;
-}
-.teamtop .card .cardwrap{
-	padding: 0px;
-	width: 350px;
-}
-.teamtop .card img{
-	width: 150px;
-}
-.teamtop .card .cardwrap .card-title{
-	position: absolute;
-	color:rgba(0,0,0,1);
-	background-image:url('../img/bg2.png');
-	background-size:100% 100%;
-	bottom: 0;
-	left: 10%;
-	height:33%;
-	width: 75%;
-	text-align: center;
-	color: black;
-	font: 150% MouseMemoirs;
-	padding-top: 20px;
-	padding-left:8px;
-}
-.teamtop .card .cardwrap .card-title .contact{
-color:rgba(0,0,0,0.6);
-}
-.teambottom .card{
-	text-align: center;
-	position: relative;
-	height: 100%;
-	width: 25%;
-	float: left;
-	font: 120% MouseMemoirs;
-}
-.teambottom .card .cardwrap{
-padding-top: 20px; 
-color:rgba(230,230,230,0.6); 
-}
 
-.teambottom .card .card-title{
-	color: rgba(0,0,0,0.8);
-	font: 150% MouseMemoirs;
-	padding: 8px;
-}
-.sidebar{
-	width: 20%;
-	height: 95.3%;
-	overflow: hidden;
-	float:left;
-	position:absolute;
-	z-index: 1;
-	background: url(../img/sidebarbg.png) repeat-y;
--webkit-background-size: 100% 100%;
-   -moz-background-size: 100% 100%;
-     -o-background-size: 100% 100%;
-        background-size: 100% 100%;
-}
-.sidebar ul{
-	padding: 0;
-	margin-top: 20px;
-	margin-left:-25%;
-	
-}
-.sidebar li{
-	list-style-type: none;
-	text-align: center;
-	padding: 10px;
-	font: 160% MouseMemoirs;
-}
-.sidebar li:hover{
-	color: #fff;
-	cursor: pointer;
-}
-.evt-sel{
-color: #fff;
-}
-#abst_hyper {
-text-decoration:none;
-color:white;
-}
-#abst_hyper a:hover{
-color:red;
-}
-.details{color:white; width: 85%; height: 92%; z-index:0; overflow: auto; margin-left:15%;margin-top:20px; position:absolute;}
-#details_table a{
-text-decoration:none;
-}
-#details_table td {
-	padding-left:50px;
-	font-family: Corbel;
-	color:white;
-}
-.details .abst{
-	margin-top:-3%;
-	color:white;
-	line-spacing:4px;
-	font: 120% Varela;
-	padding: 80px;
-	line-height: 27px;
-}
-.details .imgdiv{
-	margin-top:0%;
-	width:100%;
-	max-height: 500px;
-	overflow: hidden;
-}
-.details .img{width:100%; }
-.details .title {
-	font: 250% Carnevalee;
-	text-align: center;
-	color: rgb(236, 220, 136);
-	padding-top: 5x;
-}
-#sponsors{margin: 50px; }
-#sponsors img{
-	width: 18%;
-	max-height: 20%;
-	margin: 2%;
-	padding: 0px;
-	border-radius: 6px;
-	background: #FFF;
-	box-shadow: rgba(0,0,0,0.5) 0 0 15px 2px;
-}
 .themedesc{
 	text-align: center;
-	background: url('../img/redbg.png') no-repeat;
 	background-size: 100%;
-	font: 150% MouseMemoirs;
-	color: #022563;
+	font: 150% MouseMemoirs;	
+	color: rgba(0,0,0,0.7);
 	padding: 30px 100px;
 	height: 50%;
 }
 .themedesc p{
-	color: #09C;
+	color: rgba(0,0,0,0.7);
 }
 .about{
 	text-align: center;
@@ -362,36 +228,44 @@ text-decoration:none;
 	padding: 30px 200px;
 	height:80%;
 }
-.about p{
+.kreatix p{
 	color: rgba(0,0,0,0.7);
 }
-#social{
-	background: url('../img/marathon.png') no-repeat center center fixed; 
-	width: 100%;
-	height: 100%;
--webkit-background-size: 100%;
-   -moz-background-size: 100%;
-     -o-background-size: 100%;
-        background-size: 100%;
+.kreatix{
+	//background: url('../img/redbg.png') no-repeat;
+	background-size: 100% 80%;
+	font: 150% MouseMemoirs;
+	color: rgba(0,0,0,0.7);
+	margin-top:5%;
+	padding: 30px 200px;
+	height:80%;
 }
-#social-title{
-	font: 200% Impact;
-	color: #32350A;
-	padding: 30px 80px;
+.kreatix p{
+	text-align: center;
+	color: rgba(0,0,0,0.7);
 }
-#proshows{background: rgba(223, 202, 149, 0.63); }
+.kreatix h2{
+	text-align: center;
+}
+.kreatix img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#proshows{background: rgba(223, 202, 149, 0.63);
+font: AYearWithoutRain; }
 .protop{width: 100%;height: 70%;}
 .probottom{width: 100%;height: 30%;}
 #register{	
 	z-index:10;
 	color:white;
 	position: relative;
-	padding: 20px;
+	padding: 20px 20px 0 20px;
 	border-radius: 10px;
 	box-shadow: #000 0 0 25px 2px;
 	width:40%;
 	background: rgba(83, 17, 5, 0.9);
-	margin: 5% auto;
+	margin: 4.5% auto;
 }
 #regform{
 	color:white;
@@ -406,6 +280,8 @@ text-decoration:none;
 }
 #regform td{
 	padding: 8px;
+	color:white;
+	font: 130% MouseMemoirs;
 }
 #regform input{
 	border-radius: 4px;
@@ -421,13 +297,14 @@ text-decoration:none;
 #regform input[type=text]:hover{
 	background: rgba(220,220,240,0.25);
 }
-#regform input[type=button],#regform input[type=submit]{
+#regform input[type=reset],#regform input[type=submit]{
 	padding: 5px 20px;
 	border-radius: 4px;
 	background: rgba(320,20,0,0.3);
 }
-#regform input[type=button]:hover,#regform input[type=submit]:hover{
+#regform input[type=reset]:hover,#regform input[type=submit]:hover{
 	background: rgba(360,60,40,0.6);
+	cursor:pointer;
 }
 .floating {
     float: left;

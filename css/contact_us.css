@@ -1,0 +1,154 @@
+#content7{
+	margin: 30px auto 0 auto;
+	width: 100%;
+}
+.teamtop{
+	background: rgba(0,0,0,0.65);
+	width: 100%;
+	height: 60%;
+	overflow: hidden;
+	position:absolute;
+}
+.teambottom{
+	background: rgba(80,80,80,0.65);
+	border-top: solid 1px 0;
+	border-bottom: solid 1px 0;
+	width: 100%;
+	top:-moz-calc(60% + 15px);
+	top:-webkit-calc(60% + 15px);
+	top:calc(60% + 15px);
+	height: 32%;
+	z-index: 2;
+	position:absolute;
+	overflow:hidden;
+}
+.teamtop .card{
+	margin-left:10%;
+	text-align: center;
+	position: relative;
+	height: 300px;
+	float: left;
+	font: 120% MouseMemoirs;
+}
+.teamtop .card .cardwrap{
+	padding: 0px;
+	width: 350px;
+}
+.teamtop .card img{
+	width: 150px;
+}
+.teamtop .card .cardwrap .card-title{
+	position: absolute;
+	color:rgba(0,0,0,1);
+	background-image:url('../img/bg2.png');
+	background-size:100% 100%;
+	bottom: 0;
+	left: 10%;
+	height:33%;
+	width: 75%;
+	text-align: center;
+	color: black;
+	font: 150% MouseMemoirs;
+	padding-top: 20px;
+	padding-left:8px;
+}
+.teamtop .card .cardwrap .card-title .contact{
+color:rgba(0,0,0,0.6);
+}
+.teambottom .card{
+	text-align: center;
+	position: relative;
+	height: 100%;
+	width: 25%;
+	float: left;
+	font: 120% MouseMemoirs;
+}
+.teambottom .card .cardwrap{
+padding-top: 20px; 
+color:rgba(230,230,230,0.6); 
+}
+
+.teambottom .card .card-title{
+	color: rgba(0,0,0,0.8);
+	font: 150% MouseMemoirs;
+	padding: 8px;
+}
+.sidebar{
+	width: 20%;
+	height: 95.3%;
+	overflow: hidden;
+	float:left;
+	position:absolute;
+	z-index: 1;
+	background: url(../img/sidebarbg.png) repeat-y;
+-webkit-background-size: 100% 100%;
+   -moz-background-size: 100% 100%;
+     -o-background-size: 100% 100%;
+        background-size: 100% 100%;
+}
+.sidebar ul{
+	padding: 0;
+	margin-top: 20px;
+	margin-left:-25%;
+	
+}
+.sidebar li{
+	list-style-type: none;
+	text-align: center;
+	padding: 10px;
+	font: 160% MouseMemoirs;
+}
+.sidebar li:hover{
+	color: #fff;
+	cursor: pointer;
+}
+.evt-sel{
+color: #fff;
+}
+#abst_hyper {
+text-decoration:none;
+color:white;
+}
+#abst_hyper a:hover{
+color:red;
+}
+.details{color:white; width: 85%; height: 92%; z-index:0; overflow: auto; margin-left:15%;margin-top:20px; position:absolute;}
+#details_table a{
+text-decoration:none;
+}
+#details_table td {
+	padding-left:50px;
+	font-family: Corbel;
+	color:white;
+}
+.details .abst{
+	margin-top:-3%;
+	color:white;
+	line-spacing:4px;
+	font: 120% Varela;
+	padding: 80px;
+	line-height: 27px;
+}
+.details .imgdiv{
+	margin-top:0%;
+	width:100%;
+	max-height: 500px;
+	overflow: hidden;
+}
+.details .img{width:100%; }
+.details .title {
+	font: 250% Carnevalee;
+	text-align: center;
+	color: rgb(236, 220, 136);
+	padding-top: 5x;
+}
+#sponsors{margin: 50px; }
+#sponsors img{
+	width: 18%;
+	max-height: 20%;
+	margin: 2%;
+	padding: 0px;
+	border-radius: 6px;
+	background: #FFF;
+	box-shadow: rgba(0,0,0,0.5) 0 0 15px 2px;
+}
