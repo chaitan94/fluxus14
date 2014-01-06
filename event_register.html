@@ -52,7 +52,7 @@
 				$.post('ajax/evtReg.php', $(this).serializeArray(), function(data) {
 					if(data.indexOf('success')!=-1){
 						$('#regForm tbody').fadeOut('fast');
-						$('#regForm tbody').html(data);
+						$('#regForm tbody').html("<div style='font-size: 150%;color:#DDD;'>"+data+"</div>");
 						$('#regForm tbody').fadeIn('fast');
 					}else alert(data);
 				});

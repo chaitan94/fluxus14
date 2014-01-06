@@ -38,13 +38,9 @@ var animateOnce = function(a,b,c){
 		if(c!=undefined) c();
 	});
 };
-
+var exceptionalevents=["aadc","kreatrix"];
 var events = {
 	data: [
-		{
-			"title" : "Pro-Shows",
-			"eventid" : "proshows"
-		},
 		{
 			"title" : "Performing Arts",
 			"eventid" : "cult"
@@ -56,6 +52,14 @@ var events = {
 		{
 			"title" : "Tech Theatre",
 			"eventid" : "tech"
+		},
+		{
+			"title" : "Pro-Shows",
+			"eventid" : "proshows"
+		},
+		{
+			"title" : "Quiz Fest",
+			"eventid" : "quiz"
 		}
 	],
 	current: '',
@@ -72,9 +76,25 @@ var events = {
 		animateOnce("#events .details",'slideOutUp',function(){
 			$("#events .img")[0].src = w.img;
 			$("#events .title").html(w.title);
-			$("#events .abst").html(w.abstract);
+			if(!w.reglink){
+				// $("#events .abst").html('<form id="evtregform">Fluxus ID: <input type="text" name="fluxusid" style="padding: 5px 15px;font: 100% MouseMemoirs;margin: 0 20px;background: rgba(255,255,255,0.5);border: 0;"><input type="hidden" name="eventid" value="'+w.eventid+'"><input type="submit" value="Participate!" style="padding: 5px 15px;font: 100% Carnevalee;margin: 0 20px;cursor:pointer;"></form><br>'+w.abstract);
+				$("#events .abst").html(w.abstract);
+			}else{
+				$("#events .abst").html('<div style=\"color:#cc9900\">Registration Link:</div><a target="_blank" href=\"'+w.reglink+'\">http://goo.gl/12fiYt</a><br>'+w.abstract);
+			}
 			if(w.rules) $("#events .abst").append('<br><br><div style="font: 120% Carnevalee;color:rgb(236,220,136);">RULES</div>'+w.rules);
 			$("#events .abst").append(w.etc);
+			$("#evtregform").submit(function(){
+				$.post('ajax/evtReg.php', $(this).serializeArray(), function(data) {
+					// if(data.indexOf('success')!=-1){
+					// 	$('#regForm tbody').fadeOut('fast');
+					// 	$('#regForm tbody').html(data);
+					// 	$('#regForm tbody').fadeIn('fast');
+					// }else 
+					alert(data);
+				});
+				return false;
+			});
 			animateOnce("#events .imgdiv",'slideInLeft');
 			animateOnce("#events .abst",'slideInRight');
 		});
@@ -109,6 +129,10 @@ var events = {
 			case "cult":
 				$("#events")[0].style.background="rgba(15,0,0,0.85)";
 				jsonfile = 'https://googledrive.com/host/0B7gpUuZnCjpdWGFKOG5VbzExV00/cult.json';
+				break;
+			case "quiz":
+				$("#events")[0].style.background="rgba(15,15,0,0.85)";
+				jsonfile = 'https://googledrive.com/host/0B7gpUuZnCjpdWGFKOG5VbzExV00/quiz.json';
 				break;
 			case "proshows":
 			default:

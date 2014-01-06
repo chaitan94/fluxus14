@@ -1,23 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Mouse+Memoirs);
 html,body{
 	padding: 0;
 	margin: 0;
 	background: #111;
 }
 @font-face{
-	font-family: MouseMemoirs;
-	src: url('../fonts/MouseMemoirs-Regular.ttf')
+	font-family: NewsCycle;
+	src: url('../fonts/NewsCycle-Regular.ttf')
 }
 @font-face{
 	font-family: Carnevalee;
 	src: url('../fonts/Carnevalee Freakshow.ttf')
-}
-@font-face{
-	font-family: Valera;
-	src: url('../fonts/VarelaRound-Regular.ttf')
-}
-@font-face{
-	font-family: AYearWithoutRain;
-	src: url('../fonts/AYearWithoutRain.ttf')
 }
 a{text-decoration:none;}
 
@@ -45,7 +38,7 @@ background-color: rgba(0,0,0,0.7);
 	z-index: 5;
 }
 #navbar ul{
-	font: 135% MouseMemoirs;
+	font: 135% 'Mouse Memoirs';
 	background: rgba(192, 0, 0, 0.8);
 	padding: 4px;
 	margin: 0;
@@ -109,7 +102,7 @@ background:rgba(200,200,200,0.6);
 	list-style-type: none;
 	text-align: center;
 	padding: 10px;
-	font: 140% MouseMemoirs;
+	font: 140% 'Mouse Memoirs';
 }
 .sidebar li:hover{
 	color: #fff;
@@ -146,7 +139,7 @@ background:rgba(200,200,200,0.6);
 	margin-top:-3%;
 	color:white;
 	line-spacing:4px;
-	font: 120% AYearWithoutRain;
+	font: 130% NewsCycle;
 	padding: 80px;
 	line-height: 27px;
 }

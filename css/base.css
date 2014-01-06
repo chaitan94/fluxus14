@@ -16,8 +16,8 @@ html,body{
 	src: url('../fonts/VarelaRound-Regular.ttf')
 }
 @font-face{
-	font-family: AYearWithoutRain;
-	src: url('../fonts/AYearWithoutRain.ttf')
+	font-family: NewsCycle;
+	src: url('../fonts/NewsCycle-Regular.ttf')
 }
 .abswrap{
 	position: absolute;
@@ -158,8 +158,8 @@ background:rgba(200,200,200,0.6);
 	padding-top:1%;
 	padding-bottom:2%;
 }
-.homefoot .middiv a{color:white;}
-.homefoot .middiv a:hover{color:rgb(210,106,0);}
+.homefoot .middiv a{color:rgb(210,106,0);}
+.homefoot .middiv a:hover{color:#DDD;}
 .homefoot .caption{
 	border-top: solid 1px black;
 	margin-left:5%;
@@ -340,4 +340,50 @@ font: AYearWithoutRain; }
     to {
         -moz-transform: translate(0, -0px);
     }
+}
+
+#sidebar{
+	background: rgba(0,0,0,0.5);
+	width: 30px;
+	position: fixed;
+	top: 25%;
+	right:0;
+	height: 300px;
+	overflow: hidden;
+	border-radius: 15px 0 0 15px;
+  -webkit-transition: all 0.3s ease-out; 
+     -moz-transition: all 0.3s ease-out; 
+       -o-transition: all 0.3s ease-out; 
+          transition: all 0.3s ease-out; 
+    z-index: 2;
+}
+#sidebar:hover{
+	width: 300px;
+	box-shadow: rgba(0,0,0,0.7) 10px 0 10px -5px;
+}
+#sidebarmenu{
+	position: absolute;
+	top: 25%;
+	font: 120% Helvetica;
+	left: 8px;
+	width: 20px;
+	color: #CCC;
+	height: 100%;
+}
+#sidebar ul{
+	margin: 0;
+	padding-left: 30px;
+	width: 300px;
+	position: absolute;
+}
+#sidebar li{
+	padding: 10px 25px;
+	font: 120% MouseMemoirs;
+	color: #DDD;
+	list-style-type: none;
+}
+#sidebar li:hover{
+	background: rgba(0,0,0,0.3);
+	cursor: pointer;
+	color: rgb(210,106,0);
 }
