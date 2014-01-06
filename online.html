@@ -3,6 +3,31 @@
 	<title>Fluxus 2014</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<meta name="description" content="Official site for IIT Indore's annual cultural and technical festival">
+	<style type="text/css">
+	#olevts{
+		width: 50%;
+		margin: 0 auto;
+	}
+	#olevts ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		background: rgba(255,255,255,0.4);
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	#olevts ul a{
+		color: #222;
+		text-decoration: none;
+	}
+	#olevts ul li{
+		padding: 10px;
+	}
+	#olevts ul li:hover{
+		cursor: pointer;
+		background: rgba(255,255,255,0.5);
+	}
+	</style>
 </head>
 <body>
 	<script type="text/javascript" src="js/jquery.js"></script>
@@ -28,7 +53,13 @@
 			<div id="bestlovestory">
 				<div class="about clearfix">
 					<h2>ONLINE EVENTS</h2>
-					
+					<div id="olevts">
+					<ul>
+						<a href="kreatrix.html"><li>Kreatrix</li></a>
+						<a href="events.html#tech"><li>AADC</li></a>
+						<!-- <li onclick="window.open('events.html#tech','_blank')">Enigma</li> -->
+					</ul>
+					</div>
 				</div>
 			</div>
 		</div>

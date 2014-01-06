@@ -31,14 +31,11 @@
 		<div id="content1">
 			<div id="register">
 				<center>
-				<span style="font: 250% MouseMemoirs;">Registration</span><br>
+				<span style="font: 250% MouseMemoirs;">Event Registration</span><br>
 				<form id="regForm" method="POST">
 				<table>
-					<tr> <td>Your name</td><td><input name="name" type="text" required></td> </tr>
-					<tr> <td>College</td><td><input name="college" type="text" required></td> </tr>
-					<tr> <td>City</td><td><input name="city" type="text" required></td> </tr>
-					<tr> <td>E-Mail</td><td><input name="mail" type="text"></td> </tr>
-					<tr> <td>Phone number</td><td><input name="phone" type="text" required></td> </tr>
+					<tr> <td>Fluxus ID</td><td><input name="fluxusid" type="text" required></td> </tr>
+					<tr> <td>Event ID</td><td><input name="eventid" type="text" required></td> </tr>
 					<tr> 
 						<td><input type="submit" value="Register"></td> 
 						<td><input type="reset" value="Reset"></td>
@@ -49,11 +46,10 @@
 			</div>
 		</div>
 	</div>
-	
 	<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
 			$("#regForm").submit(function(){
-				$.post('ajax/register.php', $(this).serializeArray(), function(data) {
+				$.post('ajax/evtReg.php', $(this).serializeArray(), function(data) {
 					if(data.indexOf('success')!=-1){
 						$('#regForm tbody').fadeOut('fast');
 						$('#regForm tbody').html(data);
