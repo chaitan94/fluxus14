@@ -7,7 +7,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 </head>
 <body>
-	<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>-->
 	<script type="text/javascript" src="js/index.js"></script>
 	<canvas id="confetti"></canvas>
 	<div id="main" class="abswrap">
@@ -49,19 +48,18 @@
 			</div>
 		</div>
 	</div>
-	
 	<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript">
-			$("#regForm").submit(function(){
-				$.post('ajax/register.php', $(this).serializeArray(), function(data) {
-					if(data.indexOf('success')!=-1){
-						$('#regForm tbody').fadeOut('fast');
-						$('#regForm tbody').html(data);
-						$('#regForm tbody').fadeIn('fast');
-					}else alert(data);
-				});
-				return false;
+	<script type="text/javascript">
+		$("#regForm").submit(function(){
+			$.post('ajax/register.php', $(this).serializeArray(), function(data) {
+				if(data.indexOf('success')!=-1){
+					$('#regForm tbody').fadeOut('fast');
+					$('#regForm tbody').html(data);
+					$('#regForm tbody').fadeIn('fast');
+				}else alert(data);
 			});
-		</script>
+			return false;
+		});
+	</script>
 </body>
 </html>

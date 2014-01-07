@@ -144,7 +144,7 @@ var topic = function(titletext,name,img,hoverimg){
 	this.dom.onclick = function(e) {
 		animateOnce("#"+self.dom.id,'bounceOutUp',function(){
 			switch(self.dom.id){
-				case "themetopic" : window.location="theme.html"; break;
+				case "themetopic" : window.location="/theme"; break;
 				case "workshoptopic" : window.location="events.html#workshop";break;
 				case "techtopic" : window.location="events.html#tech";break;
 				case "proshowstopic" : window.location="events.html#proshows";break;

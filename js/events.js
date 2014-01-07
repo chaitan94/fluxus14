@@ -80,7 +80,7 @@ var events = {
 				// $("#events .abst").html('<form id="evtregform">Fluxus ID: <input type="text" name="fluxusid" style="padding: 5px 15px;font: 100% MouseMemoirs;margin: 0 20px;background: rgba(255,255,255,0.5);border: 0;"><input type="hidden" name="eventid" value="'+w.eventid+'"><input type="submit" value="Participate!" style="padding: 5px 15px;font: 100% Carnevalee;margin: 0 20px;cursor:pointer;"></form><br>'+w.abstract);
 				$("#events .abst").html(w.abstract);
 			}else{
-				$("#events .abst").html('<div style=\"color:#cc9900\">Registration Link:</div><a target="_blank" href=\"'+w.reglink+'\">http://goo.gl/12fiYt</a><br>'+w.abstract);
+				$("#events .abst").html('<div style=\"color:#cc9900\">Registration Link:</div><a target="_blank" href=\"'+w.reglink+'\">'+w.reglink+'</a><br>'+w.abstract);
 			}
 			if(w.rules) $("#events .abst").append('<br><br><div style="font: 120% Carnevalee;color:rgb(236,220,136);">RULES</div>'+w.rules);
 			$("#events .abst").append(w.etc);

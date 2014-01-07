@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>Fluxus 2014</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css">
+	<meta name="description" content="Official site for IIT Indore's annual cultural and technical festival">
+	<style type="text/css">
+	#hosReg tr{
+		font: 150% MouseMemoirs;
+	}
+	#hosReg input{
+		font: 100% MouseMemoirs;
+		background: rgba(255,255,255,0.7);
+		padding: 5px 10px;
+		margin: 5px 10px;
+		border-radius: 5px;
+		border: 0;
+	}
+	#hosReg input:hover{
+		background: rgba(255,255,255,0.9);
+	}
+	.hoscon{font: 100% MouseMemoirs;}
+	.contt{
+		text-align: center;
+		background-size: 100% 80%;
+		font: 150% MouseMemoirs;
+		color: rgba(0,0,0,0.7);
+		margin-top:2%;
+		padding: 30px 200px;
+		height:80%;
+	}
+	</style>
+</head>
+<body>
+	<script type="text/javascript" src="/js/jquery.js"></script>
+	<div id="main" class="abswrap">
+		<div id="navbar" class="fixwrap" style="">
+			<center>
+				<ul>
+					<a href="/home.html"><li data-name="home">Home</li></a>
+					<a href="/about_us.html"><li data-name="about">About Us</li></a>
+					<a href="/events.html#proshows"><li data-name="proshows">Pro-Shows</li></a>
+					<a href="/events.html#tech"><li data-name="tech">Tech Theatre</li></a>
+					<a href="/events.html#cult"><li data-name="cult">Performing Arts</li></a>
+					<a href="/events.html#workshop"><li data-name="workshop">Workshops</li></a>
+					<a href="/social.html"><li data-name="social">Social Cause</li></a>
+					<a href="/sponsors.html"><li data-name="sponsors">Sponsors</li></a>
+					<a href="/home.html"><li data-name="home" class="nav-right"><img height="25" src="/img/logo.png"></li></a>
+					<a href="/contact_us.html"><li data-name="team" class="nav-right">Contact Us</li></a>
+					<a href="/register.html"><li data-name="register" class="nav-right">Register</li></a>
+				</ul>
+			</center>
+		</div>
+		<div class="contt clearfix">
+			<h2>Register for accomodation</h2>
+			<center>
+			<form id="hosReg">
+				<table>
+					<tr><td>Name</td><td><input type="text" name="name"></td></tr>
+					<tr><td>Phone No.</td><td><input type="text" name="phone"></td></tr>
+					<tr><td>Email ID.</td><td><input type="text" name="email"></td></tr>
+					<tr><td>College Name</td><td><input type="text" name="college"></td></tr>
+					<tr><td>Gender</td><td><input type="text" name="gender"></td></tr>
+					<tr><td>City</td><td><input type="text" name="city"></td></tr>
+					<tr><td>State</td><td><input type="text" name="state"></td></tr>
+					<tr><td></td><td><input type="submit"></td></tr>
+				</table>
+			</form>
+			For further details, contact:
+			<table class="hoscon">
+				<tr><td>Aman Doshi</td><td>9981996835</td></tr>
+				<tr><td>Nishant Kumar</td><td>9993261470</td></tr>
+				<tr><td>Rishabh Chaudhary</td><td>9685331213</td></tr>
+			</table>
+			</center>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+		$("#hosReg").submit(function(){
+			$.post('/ajax/hosReg.php', $(this).serializeArray(), function(data) {
+				// if(data.indexOf('success')!=-1){
+				// 	$('#regForm tbody').fadeOut('fast');
+				// 	$('#regForm tbody').html(data);
+				// 	$('#regForm tbody').fadeIn('fast');
+				// }else
+				alert(data);
+			});
+			return false;
+		});
+	</script>
+</body>
+</html>

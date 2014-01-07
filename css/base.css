@@ -149,16 +149,17 @@ background:rgba(200,200,200,0.6);
 .homefoot .middiv{
 	font: 170% MouseMemoirs;
 	color: #fff;
-	text-align:center;
-	width:21%;
+	text-align: center;
+	width: 16%;
 	float: left;
-	margin: 2% 0 0 9%;
-	background:url(../img/bg1.png);
+	margin: 2% 0 0 3%;
+	font-size:140%;
+	background: url(../img/bg1.png);
 	background-size: 100% 100%;
-	padding-top:1%;
-	padding-bottom:2%;
+	padding-top: 1%;
+	padding-bottom: 2%;
 }
-.homefoot .middiv a{color:rgb(210,106,0);}
+.homefoot .middiv a{color:rgb(221, 193, 144);}
 .homefoot .middiv a:hover{color:#DDD;}
 .homefoot .caption{
 	border-top: solid 1px black;
@@ -220,11 +221,10 @@ font: 140% MouseMemoirs;
 }
 .about{
 	text-align: center;
-	//background: url('../img/redbg.png') no-repeat;
 	background-size: 100% 80%;
 	font: 150% MouseMemoirs;
 	color: rgba(0,0,0,0.7);
-	margin-top:10%;
+	margin-top:8%;
 	padding: 30px 200px;
 	height:80%;
 }
@@ -232,7 +232,6 @@ font: 140% MouseMemoirs;
 	color: rgba(0,0,0,0.7);
 }
 .kreatix{
-	//background: url('../img/redbg.png') no-repeat;
 	background-size: 100% 80%;
 	font: 150% MouseMemoirs;
 	color: rgba(0,0,0,0.7);
@@ -377,7 +376,7 @@ font: AYearWithoutRain; }
 	position: absolute;
 }
 #sidebar li{
-	padding: 10px 25px;
+	padding: 10px 25px 10px 5px;
 	font: 120% MouseMemoirs;
 	color: #DDD;
 	list-style-type: none;
