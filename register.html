@@ -5,10 +5,46 @@
 	<meta name="description" content="Official site for IIT Indore's annual cultural and technical festival">
 	<link href="favicon.ico" rel="icon" type="image/x-icon" />
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<style type="text/css">
+	#register{	
+		z-index:10;
+		color:#222;
+		position: relative;
+		padding: 20px 20px 0 20px;
+		border-radius: 10px;
+		width:40%;
+		margin: 4.5% auto;
+	}
+	#regform{
+		padding: 5%;
+	}
+	#regform table{
+		padding: 3% 7%;
+		border-radius: 10px;
+		width: 100%;
+	}
+	#regform td{
+		padding: 8px;
+		font: 130% MouseMemoirs;
+	}
+	#regform input{
+		border-radius: 4px;
+		font-size: 100%;
+		color: #EEE;
+		border: 0;
+	}
+	#regform input[type=text]{
+		padding: 7px;
+		background: rgba(20,20,20,0.35);
+		width: 100%;
+	}
+	#regform input[type=text]:hover{
+		background: rgba(20,20,20,0.55);
+	}
+	</style>
 </head>
 <body>
 	<script type="text/javascript" src="js/index.js"></script>
-	<canvas id="confetti"></canvas>
 	<div id="main" class="abswrap">
 		<div id="navbar" class="fixwrap" style="">
 			<center>
@@ -38,9 +74,11 @@
 					<tr> <td>City</td><td><input name="city" type="text" required></td> </tr>
 					<tr> <td>E-Mail</td><td><input name="mail" type="text"></td> </tr>
 					<tr> <td>Phone number</td><td><input name="phone" type="text" required></td> </tr>
+					<tr> <td>Gender</td><td><input name="gender" type="radio" value="male" checked>Male<input name="gender" type="radio" value="female">Female</td> </tr>
+					<tr> <td>Accommodation</td><td><input name="accommodation" type="radio" value="1">Yes<input name="accommodation" type="radio" value="0" checked>No</td></tr>
 					<tr> 
-						<td><input type="submit" value="Register"></td> 
-						<td><input type="reset" value="Reset"></td>
+						<td><input class="redbutton" type="submit" value="Register"></td> 
+						<td><input class="redbutton" type="reset" value="Reset"></td>
 					</tr>
 				</table>
 				</form>

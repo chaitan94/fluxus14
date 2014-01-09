@@ -1,20 +1,59 @@
 <html>
 <head>
-	<title>Fluxus 2014</title>
+	<title>Desi Carnival | Fluxus 2014</title>
 	<link rel="stylesheet" type="text/css" href="/css/base.css">
-	<link rel="stylesheet" type="text/css" href="/css/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/contact_us.css">
 	<meta name="description" content="Official site for IIT Indore's annual cultural and technical festival">
 	<link href="favicon.ico" rel="icon" type="image/x-icon" />
-	<script type="text/javascript">
-	</script>
+	<style type="text/css">
+.floating {
+    float: left;
+    -webkit-animation-name: Floatingx;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: Floating;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+@-webkit-keyframes Floatingx {
+    from {
+        -webkit-transform:translate(0, 0px);
+    }
+    65% {
+        -webkit-transform:translate(0, 15px);
+    }
+    to {
+        -webkit-transform: translate(0, -0px);
+    }
+}
+@-moz-keyframes Floating {
+    from {
+        -moz-transform:translate(0, 0px);
+    }
+    65% {
+        -moz-transform:translate(0, 15px);
+    }
+    to {
+        -moz-transform: translate(0, -0px);
+    }
+}
+.themedesc{
+	text-align: center;
+	background-size: 100%;
+	font: 150% MouseMemoirs;	
+	color: rgba(0,0,0,0.7);
+	padding: 30px 100px;
+	height: 50%;
+}
+.themedesc p{
+	color: rgba(0,0,0,0.7);
+}
+	</style>
 </head>
 <body>
-	<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>-->
-	<script type="text/javascript" src="/js/jquery.js"></script>
-	<script type="text/javascript" src="/js/index.js"></script>
-	
-	<canvas id="confetti"></canvas>
 	<div id="main" class="abswrap">
 		<div id="navbar" class="fixwrap" style="">
 			<center>
@@ -47,9 +86,6 @@
 				</div>
 			</div>
 		</div>
-			
-		
 	</div>
-	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

@@ -35,6 +35,15 @@ html,body{
 	overflow: hidden;
 }
 .clearfix{float: none;}
+.redbutton{
+	padding: 5px 20px;
+	border-radius: 4px;
+	background: rgba(150,10,10,0.7);
+}
+.redbutton:hover{
+	background: rgba(192,0,0,0.85);
+	cursor:pointer;
+}
 #jpreContent{
 	background: #111 no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -86,7 +95,6 @@ html,body{
 	cursor: pointer;
 	color:rgba(255,255,0,0.8);	
 }
-
 #navbar ul a{
 text-decoration:none;
 color:white;
@@ -136,10 +144,8 @@ background:rgba(200,200,200,0.6);
 	height:150px;
 	padding: 2%;
 }
-
 .homefoot .side a{color:white;}
 .homefoot .side a:hover{color:rgb(210,106,0);}
-
 .homefoot .middle{
 	float: left;
 	height: 100%;
@@ -178,10 +184,6 @@ background:rgba(200,200,200,0.6);
 	height: 95.3%;
 	background: rgba(17,17,17,0.85);
 }
-#modals{
-	position: absolute;
-	width: 100%;
-}
 .topic{
 	cursor: pointer;
 	position : absolute;
@@ -201,24 +203,6 @@ background:rgba(200,200,200,0.6);
 .topic-title:hover{
 	color : rgba(0,0,0,1);
 }
-#footer{
-position:absolute;
-top:95%;
-left:33%;
-font: 140% MouseMemoirs;
-}
-
-.themedesc{
-	text-align: center;
-	background-size: 100%;
-	font: 150% MouseMemoirs;	
-	color: rgba(0,0,0,0.7);
-	padding: 30px 100px;
-	height: 50%;
-}
-.themedesc p{
-	color: rgba(0,0,0,0.7);
-}
 .about{
 	text-align: center;
 	background-size: 100% 80%;
@@ -228,119 +212,6 @@ font: 140% MouseMemoirs;
 	padding: 30px 200px;
 	height:80%;
 }
-.kreatix p{
-	color: rgba(0,0,0,0.7);
-}
-.kreatix{
-	background-size: 100% 80%;
-	font: 150% MouseMemoirs;
-	color: rgba(0,0,0,0.7);
-	margin-top:5%;
-	padding: 30px 200px;
-	height:80%;
-}
-.kreatix p{
-	text-align: center;
-	color: rgba(0,0,0,0.7);
-}
-.kreatix h2{
-	text-align: center;
-}
-.kreatix img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-#proshows{background: rgba(223, 202, 149, 0.63);
-font: AYearWithoutRain; }
-.protop{width: 100%;height: 70%;}
-.probottom{width: 100%;height: 30%;}
-#register{	
-	z-index:10;
-	color:white;
-	position: relative;
-	padding: 20px 20px 0 20px;
-	border-radius: 10px;
-	box-shadow: #000 0 0 25px 2px;
-	width:40%;
-	background: rgba(83, 17, 5, 0.9);
-	margin: 4.5% auto;
-}
-#regform{
-	color:white;
-	font: 200% MouseMemoirs;
-	padding: 5%;
-}
-#regform table{
-	padding: 3% 7%;
-	border-radius: 10px;
-	width: 100%;
-	background: rgba(0,0,0, 0.7);
-}
-#regform td{
-	padding: 8px;
-	color:white;
-	font: 130% MouseMemoirs;
-}
-#regform input{
-	border-radius: 4px;
-	font-size: 100%;
-	color: #EEE;
-	border: 0;
-}
-#regform input[type=text]{
-	padding: 7px;
-	background: rgba(220,220,240,0.15);
-	width: 100%;
-}
-#regform input[type=text]:hover{
-	background: rgba(220,220,240,0.25);
-}
-#regform input[type=reset],#regform input[type=submit]{
-	padding: 5px 20px;
-	border-radius: 4px;
-	background: rgba(320,20,0,0.3);
-}
-#regform input[type=reset]:hover,#regform input[type=submit]:hover{
-	background: rgba(360,60,40,0.6);
-	cursor:pointer;
-}
-.floating {
-    float: left;
-    -webkit-animation-name: Floatingx;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    -moz-animation-name: Floating;
-    -moz-animation-duration: 3s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: ease-in-out;
-    margin-left: 30px;
-    margin-top: 5px;
-}
-@-webkit-keyframes Floatingx {
-    from {
-        -webkit-transform:translate(0, 0px);
-    }
-    65% {
-        -webkit-transform:translate(0, 15px);
-    }
-    to {
-        -webkit-transform: translate(0, -0px);
-    }
-}
-@-moz-keyframes Floating {
-    from {
-        -moz-transform:translate(0, 0px);
-    }
-    65% {
-        -moz-transform:translate(0, 15px);
-    }
-    to {
-        -moz-transform: translate(0, -0px);
-    }
-}
-
 #sidebar{
 	background: rgba(0,0,0,0.5);
 	width: 30px;

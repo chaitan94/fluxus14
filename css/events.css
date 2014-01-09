@@ -80,36 +80,35 @@ background:rgba(200,200,200,0.6);
 	overflow: hidden;
 }
 .sidebar{
-	width: 20%;
-	height: 100%;
-	overflow: hidden;
+   -moz-background-size:100% 100%;
+     -o-background-size:100% 100%;
+-webkit-background-size:100% 100%;
+	background:url(../img/sidebarbg.png) repeat-y;
+        background-size:100% 100%;
 	float:left;
+	height:100%;
+	overflow:hidden;
 	position:absolute;
-	z-index: 1;
-	background: url(../img/sidebarbg.png) repeat-y;
--webkit-background-size: 100% 100%;
-   -moz-background-size: 100% 100%;
-     -o-background-size: 100% 100%;
-        background-size: 100% 100%;
+	width:20%;
+	z-index:1;
 }
 .sidebar ul{
-	padding: 0;
-	margin-top: 20px;
 	margin-left:-25%;
-	
+	margin-top:20px;
+	padding:0;
 }
 .sidebar li{
-	list-style-type: none;
-	text-align: center;
-	padding: 10px;
-	font: 140% 'Mouse Memoirs';
+	font:140% 'Mouse Memoirs';
+	list-style-type:none;
+	padding:10px;
+	text-align:center;
 }
 .sidebar li:hover{
-	color: #fff;
-	cursor: pointer;
+	color:#751E02;
+	cursor:pointer;
 }
 .evt-sel{
-	color: #fff;
+	color:#751E02;
 }
 #abst_hyper {
 	text-decoration:none;
