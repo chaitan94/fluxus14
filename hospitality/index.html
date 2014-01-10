@@ -1,46 +1,57 @@
 <html>
 <head>
 	<title>Hospitality | Fluxus 2014</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/base.css">
 	<meta name="description" content="Official site for IIT Indore's annual cultural and technical festival">
 	<style type="text/css">
-	.hoscon{font: 100% MouseMemoirs;}
-	.contt{
-		text-align: center;
-		background-size: 100% 80%;
-		font: 150% MouseMemoirs;
-		color: rgba(0,0,0,0.7);
-		margin-top:2%;
-		padding: 30px 200px;
-		height:80%;
-	}
-	#menu{
-		width: 50%;
-		margin: 0 auto;
-	}
-	#menu ul{
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		background: rgba(255,255,255,0.4);
-		border-radius: 10px;
-		overflow: hidden;
-	}
-	#menu ul a{
-		color: #222;
-		text-decoration: none;
-	}
-	#menu ul li{
-		padding: 10px;
-	}
-	#menu ul li:hover{
-		cursor: pointer;
-		background: rgba(255,255,255,0.5);
-	}
+#hoscon table{font: 150% MouseMemoirs;}
+#hoscon table td{padding:5px 15px;}
+.contt h2{
+	font: 250% MouseMemoirs;
+}
+.contt{
+	text-align: center;
+	background-size: 100% 80%;
+	color: rgba(0,0,0,0.7);
+	margin-top:2%;
+	padding: 30px 200px;
+	height:80%;
+}
+#myTab{margin-top: 40px;}
+#myTab li{
+	display: inline;
+	list-style-type: none;
+}
+#myTab a{
+	padding: 12px;
+	border-radius: 4px 4px 0 0;
+	background: rgba(192,0,0,0.4);
+	color:#DDD;
+}
+#myTab .active a{
+	background: rgba(92,0,0,0.6);
+}
+#myTab a:hover{
+	background: rgba(0,0,0,0.2);
+}
+.active{background: rgba(255,255,255,0.3);}
+.tab-pane{
+	padding: 20px;
+	min-height: 80%;
+}
+input{
+	border-radius: 4px;
+	font-size: 100%;
+	color: #EEE;
+	border: 0;
+	margin: 7px;
+	padding: 7px;
+	background: rgba(20,20,20,0.35);
+}
 	</style>
 </head>
 <body>
-	<script type="text/javascript" src="/js/jquery.js"></script>
 	<div id="main" class="abswrap">
 		<div id="navbar" class="fixwrap" style="">
 			<center>
@@ -60,25 +71,54 @@
 			</center>
 		</div>
 		<div class="contt clearfix">
-			<h2>Accommodation</h2>
+			<h2>Hospitality</h2>
 			<center>
-			<div id="menu">
-			<ul>
-				<a href="#"><li>FAQ</li></a>
-				<a href="#"><li>Terms and conditions</li></a>
+			<ul id="myTab">
+				<li class="active"><a href="#hosreg" data-toggle="tab">Register</a></li>
+				<li><a href="#hosfaq" data-toggle="tab">FAQ</a></li>
+				<li><a href="#hosterms" data-toggle="tab">Terms</a></li>
+				<li><a href="#hoscon" data-toggle="tab">Contact</a></li>
 			</ul>
+			
+			<div class="tab-content">
+				<div class="tab-pane active" id="hosreg">
+					To avail accommodation, register here:
+					<form id="hosRegForm" method="POST">
+						Fluxus ID:<input type="text" name="fluxusid"><br>
+						<input type="submit" name="submit" value="Register">
+						<input type="submit" name="submit" value="Cancel">
+					</form>
+				</div>
+				<div class="tab-pane" id="hosfaq">
+					<a href="/data/hosp_FAQ.pdf" style="font: 150% MouseMemoirs;color:white;text-decoration:none;" download><span class="redbutton">Download FAQ</span></a>
+				</div>
+				<div class="tab-pane" id="hosterms">
+					<a href="/data/hosp_tac.pdf" style="font: 150% MouseMemoirs;color:white;text-decoration:none;" download><span class="redbutton">Download T&C</span></a>
+				</div>
+				<div class="tab-pane" id="hoscon">
+					<table>
+						<tr><td>Aman Doshi</td><td>9981996835</td></tr>
+						<tr><td>Nishant Kumar</td><td>9993261470</td></tr>
+						<tr><td>Rishabh Chaudhary</td><td>9685331213</td></tr>
+						<tr><td>E-mail</td><td>hospitality.fluxus@gmail.com</td></tr>
+					</table>
+				</div>
 			</div>
-			<br>
-			For details, contact:
-			<table class="hoscon">
-				<tr><td>Aman Doshi</td><td>9981996835</td></tr>
-				<tr><td>Nishant Kumar</td><td>9993261470</td></tr>
-				<tr><td>Rishabh Chaudhary</td><td>9685331213</td></tr>
-				<tr><td>E-mail</td><td>hospitality.fluxus@gmail.com</td></tr>
-			</table>
 			</center>
 		</div>
 	</div>
-	<script type="text/javascript" src="js/index.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	$('#myTab a').tab();
+});
+$("#hosRegForm input[type=submit]").click(function(){
+	$.post('/ajax/hosReg.php', {fluxusid:$("#hosRegForm input[name=fluxusid]").val(),submit:$(this).val()}, function(data) {
+		alert(data);
+	});
+	return false;
+});
+</script>
 </body>
 </html>

@@ -1,11 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Mouse+Memoirs);
 html,body{
 	padding: 0;
 	margin: 0;
 	background: #111;
-}
-@font-face{
-	font-family: MouseMemoirs;
-	src: url('../fonts/MouseMemoirs-Regular.ttf')
 }
 @font-face{
 	font-family: Carnevalee;
@@ -21,6 +18,14 @@ html,body{
 }
 .abswrap{
 	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+.relwrap{
+	position: relative;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -66,12 +71,12 @@ html,body{
 #jprePercentage{
 	color: #AAA;
 	left: 35%;
-	font: 500% MouseMemoirs;
+	font: 500% 'Mouse Memoirs';
 }
 #loading{
 	position: relative;
 	top:70%;
-	font: 40px MouseMemoirs;
+	font: 40px 'Mouse Memoirs';
 	color: #222;
 	text-align: center;
 	cursor: pointer;
@@ -79,7 +84,7 @@ html,body{
 }
 #navbar{z-index: 5;}
 #navbar ul{
-	font: 135% MouseMemoirs;
+	font: 120% 'Mouse Memoirs';
 	background: rgba(192, 0, 0, 0.8);
 	padding: 4px;
 	margin: 0;
@@ -90,7 +95,7 @@ html,body{
    -moz-transition: all 0.3s ease-out; 
      -o-transition: all 0.3s ease-out; 
         transition: all 0.3s ease-out; 
-	padding: 2px 2%;
+	padding: 2px 1.8%;
 	display: inline;
 	cursor: pointer;
 	color:rgba(255,255,0,0.8);	
@@ -135,7 +140,7 @@ background:rgba(200,200,200,0.6);
 .homefoot .left{background:url(../img/left.png);}
 .homefoot .right{background:url(../img/right.png);}
 .homefoot .side{
-	font: 160% Carnevalee;
+	font: 140% Carnevalee;
 	color: #ffe4c4;
 	text-align:center;
 	float:left;
@@ -153,7 +158,7 @@ background:rgba(200,200,200,0.6);
 }
 #hyper a:hover{color:rgb(210,106,0);}
 .homefoot .middiv{
-	font: 170% MouseMemoirs;
+	font: 170% 'Mouse Memoirs';
 	color: #fff;
 	text-align: center;
 	width: 16%;
@@ -175,7 +180,7 @@ background:rgba(200,200,200,0.6);
 	width: 50%;
 	top :70%;
 	text-align: center;
-	font: 160% MouseMemoirs;
+	font: 160% 'Mouse Memoirs';
 	color: black;
 	padding-bottom: 8px;
 }
@@ -187,17 +192,18 @@ background:rgba(200,200,200,0.6);
 .topic{
 	cursor: pointer;
 	position : absolute;
-	width : 150px;
+	width : 100px;
 	height : 80px;
+	margin-left:20px;
 }
 .topic img{height:100%;}
 .topic .topic-imgdiv{width:80px;margin:0 auto;}
 .topic-title{
-	margin-top: -25px;
-	margin-left: -10px;
+	margin-top: -15px;
+	margin-left: -40px;
 	width : 180px;
 	text-align : center;
-	font : 160% Carnevalee;
+	font : 145% Carnevalee;
 	color : #555;
 }
 .topic-title:hover{
@@ -206,26 +212,39 @@ background:rgba(200,200,200,0.6);
 .about{
 	text-align: center;
 	background-size: 100% 80%;
-	font: 150% MouseMemoirs;
+	font: 150% 'Mouse Memoirs';
 	color: rgba(0,0,0,0.7);
 	margin-top:8%;
 	padding: 30px 200px;
 	height:80%;
 }
+#tent{
+	position:fixed;
+	z-index:2;
+	top:7%;
+	left:0;
+	color:#555;
+	text-align:center;
+	font:160% Carnevalee;
+}
 #sidebar{
 	background: rgba(0,0,0,0.5);
 	width: 30px;
 	position: fixed;
-	top: 25%;
+	top: 15%;
 	right:0;
-	height: 300px;
-	overflow: hidden;
+	height: 400px;
 	border-radius: 15px 0 0 15px;
   -webkit-transition: all 0.3s ease-out; 
      -moz-transition: all 0.3s ease-out; 
        -o-transition: all 0.3s ease-out; 
           transition: all 0.3s ease-out; 
     z-index: 2;
+}
+#sidebaritems{
+	height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 #sidebar:hover{
 	width: 300px;
@@ -244,11 +263,10 @@ background:rgba(200,200,200,0.6);
 	margin: 0;
 	padding-left: 30px;
 	width: 300px;
-	position: absolute;
 }
 #sidebar li{
 	padding: 10px 25px 10px 5px;
-	font: 120% MouseMemoirs;
+	font: 120% 'Mouse Memoirs';
 	color: #DDD;
 	list-style-type: none;
 }

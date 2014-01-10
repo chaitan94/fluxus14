@@ -24,7 +24,7 @@
 }
 .teamtop .card{
 	float:left;
-	font:120% MouseMemoirs;
+	font:120% 'Mouse Memoirs';
 	height:300px;
 	margin-left:10%;
 	position:relative;
@@ -57,7 +57,7 @@
 }
 .teambottom .card{
 	float:left;
-	font:120% MouseMemoirs;
+	font:120% 'Mouse Memoirs';
 	height:100%;
 	position:relative;
 	text-align:center;
@@ -78,7 +78,7 @@
 #footer{
 	background: #050207;
 	bottom: 0;
-	font: 140% MouseMemoirs;
+	font: 140% 'Mouse Memoirs';
 	height: 4%;
 	margin: 0 auto;
 	position: absolute;
@@ -111,7 +111,7 @@
 	padding:0;
 }
 .sidebar li{
-	font:160% MouseMemoirs;
+	font:160% 'Mouse Memoirs';
 	list-style-type:none;
 	padding:10px;
 	text-align:center;
