@@ -1,17 +1,28 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Fluxus 2014</title>
-	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<title>Forgot Fluxus ID</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css">
 	<meta name="description" content="Official site for IIT Indore's annual cultural and technical festival">
+	<style type="text/css">	
+input{
+	font: 130% 'Mouse Memoirs';
+	border-radius: 4px;
+	font-size: 100%;
+	color: #EEE;
+	border: 0;
+	margin: 7px;
+	padding: 7px;
+	background: rgba(20,20,20,0.35);
+}</style>
 </head>
 <body>
-	<script type="text/javascript" src="js/jquery.js"></script>
 	<div id="main" class="abswrap">
-		<div id="navbar" class="fixwrap" style="">
+		<div id="navbar" class="fixwrap">
 			<center>
 				<ul>
 					<a href="home.html"><li data-name="home">Home</li></a>
-					<a href="about_us.html"><li data-name="about">About Us</li></a>
+					<a href="about_us.html" class="active"><li data-name="about">About Us</li></a>
 					<a href="events.html#proshows"><li data-name="proshows">Pro-Shows</li></a>
 					<a href="events.html#tech"><li data-name="tech">Tech Theatre</li></a>
 					<a href="events.html#cult"><li data-name="cult">Performing Arts</li></a>
@@ -25,14 +36,23 @@
 			</center>
 		</div>
 		<div class="about clearfix">
-			<h2>SOCIAL CAUSE</h2>					
-			City Marathon, 2014<br>
-			<div style="font: 250% Impact;color:#290;padding: 10px">GO GREEN</div>
-			<div style="font: 120% Impact;color: #32350A;">
-			<a href="/social/" target="_blank">Enter Website</a>
-			</div>
+			<h2></h2>
+			<p>Enter your email address to get your Fluxus ID:</p>
+			<form id="forgot" method="POST">
+				<input type="text" name="email">
+				<input type="submit">
+			</form>
+			<p id="response"></p>
 		</div>
 	</div>
-	<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+	$("#forgot").submit(function(){
+		$.post('ajax/forgot.php', $(this).serializeArray(), function(data) {
+			$("#response").html(data);
+		});
+		return false;
+	});
+</script>
 </body>
 </html>

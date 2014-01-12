@@ -5,10 +5,10 @@
 	<link rel="stylesheet" type="text/css" href="/css/base.css">
 	<meta name="description" content="Official site for IIT Indore's annual cultural and technical festival">
 	<style type="text/css">
-#hoscon table{font: 150% MouseMemoirs;}
+#hoscon table{font: 150% 'Mouse Memoirs';}
 #hoscon table td{padding:5px 15px;}
 .contt h2{
-	font: 250% MouseMemoirs;
+	font: 250% 'Mouse Memoirs';
 }
 .contt{
 	text-align: center;
@@ -35,11 +35,15 @@
 #myTab a:hover{
 	background: rgba(0,0,0,0.2);
 }
-.active{background: rgba(255,255,255,0.3);}
+.active{background: rgba(255,255,255,0);}
+.tab-content{
+	background: rgba(255,255,255,0.3);
+}
 .tab-pane{
 	padding: 20px;
 	min-height: 80%;
 }
+.tab-pane p{text-align:left;}
 input{
 	border-radius: 4px;
 	font-size: 100%;
@@ -71,7 +75,7 @@ input{
 			</center>
 		</div>
 		<div class="contt clearfix">
-			<h2>Hospitality</h2>
+			<h2>Accommodation</h2>
 			<center>
 			<ul id="myTab">
 				<li class="active"><a href="#hosreg" data-toggle="tab">Register</a></li>
@@ -81,21 +85,23 @@ input{
 			</ul>
 			
 			<div class="tab-content">
-				<div class="tab-pane active" id="hosreg">
+				<div class="tab-pane fade in active" id="hosreg">
 					To avail accommodation, register here:
 					<form id="hosRegForm" method="POST">
 						Fluxus ID:<input type="text" name="fluxusid"><br>
 						<input type="submit" name="submit" value="Register">
-						<input type="submit" name="submit" value="Cancel">
+						<input type="submit" name="submit" value="Cancel"><br>
+						<a href="/forgot.html">Forgot your fluxus ID?</a>
 					</form>
 				</div>
-				<div class="tab-pane" id="hosfaq">
-					<a href="/data/hosp_FAQ.pdf" style="font: 150% MouseMemoirs;color:white;text-decoration:none;" download><span class="redbutton">Download FAQ</span></a>
+				<div class="tab-pane fade in" id="hosfaq">
+					<a href="/data/hosp_FAQ.pdf" style="font: 150% 'Mouse Memoirs';color:white;text-decoration:none;" download><span class="redbutton">Download FAQ</span></a><br>
+					<p><b>What type of accommodation will be provided?</b></p><p>Accommodation will be provided to boys and girls in well secured separate hostels. Moreover, boys and girls won’t be allowed to visit each other’s rooms.</p><br><br><p><b>What are the accommodation charges for Fluxus 2014?</b></p><p>An amount of Rs.1100* per person is the accommodation fee out of which Rs.100 is refundable. For those who register after the deadline, an amount of Rs.1200* per person will be charged out of which Rs.100 is refundable. In exceptional circumstances, the refundable amount may be forfeited if any damage has been done to the room/dorm/accessories where accommodation has been provided. Besides, the damage cost will also be borne by the occupants.</p><br><br><p>*The charges will be the same irrespective of the duration of stay up to a maximum of four days i.e. 1700 hours on 6th February’14 to 1000 hours on 10th February’14. The checkout time has to be followed strictly.</p><br><br><p><b>What all does the Hospitality fee cover?</b></p><p>As a part of accommodation, Hospitality Teaam will make arrangements for mattress, pillow, hot water and transportation*. Participants need to bring bed sheets,pillow cover, blanket etc. as per their own requirement.</p><br><br><p>*Buses will run between hostels and the Fluxus venue only once in the morning and once after the pro-nites.</p><br><br><p><b>What is the procedure for payment of hospitality fee?</b></p><p>The payment is to be done at the registration desk, IET Campus, IIT Indore in cash only.</p><br><br><p><b>When will you confirm my accommodation?</b></p><p>You first need to register for Fluxus and get your FX-ID. Your Accommodation will then be confirmed by the Hospitality Team. The confirmation for the same will be communicated to the participant by the Hospitality Team before 31st January’14. The Hospitality Team will send you a confirmation letter which must be furnished at the time of registration.</p><br><br><p><b>Can we register in groups for accommodation?</b></p><p>No. Every participant need to register individually whether he/she is coming in group or alone. If a group of participants want to stay together, a mail has to be sent beforehand at |hospitality.fluxus@gmail.com|</p><br><br><p><b>Can any of my relative or professor come along with me?</b></p><p>A maximum of 1 relative per group or 1 professor from one college will be allowed to stay and is subject to availability. The accommodation charges for faculty will vary than that for the students.</p><br><br><p><b>We are a group of friends not participating in any of the major competitions and just coming to Fluxus to have fun. Would we be allowed?</b></p><p>Yes, you can definitely attend Fluxus by registering at the Fluxus official website. However, for accommodation you must register at | www.fluxus.in |.</p><br><br><p><b>What is the procedure to be followed after we reach to attend Fluxus?</b></p><p>You need to come to the Hospitality Desk, IET Campus, IIT Indore along with your college identity card. You will be allotted your place of stay and given a registration booklet*. Accommodation would be strictly on shared basis.</p><br><br><p>*the registration booklet must be present with the participant at all times during their stay for Fluxus.</p><br><br><p><b>Does accommodation fee include the food facility as well?</b></p><p>No. The accommodation charges don’t include food. However, there will be food stalls operational during Fluxus to cater for the food requirements.</p><br><br>For any queries and doubts, feel free to contact the Hospitality team at | hospitality.fluxus@gmail.com |.
 				</div>
-				<div class="tab-pane" id="hosterms">
-					<a href="/data/hosp_tac.pdf" style="font: 150% MouseMemoirs;color:white;text-decoration:none;" download><span class="redbutton">Download T&C</span></a>
+				<div class="tab-pane fade in" id="hosterms">
+					<a href="/data/hosp_tac.pdf" style="font: 150% 'Mouse Memoirs';color:white;text-decoration:none;" download><span class="redbutton">Download T&C</span></a>
 				</div>
-				<div class="tab-pane" id="hoscon">
+				<div class="tab-pane fade in" id="hoscon">
 					<table>
 						<tr><td>Aman Doshi</td><td>9981996835</td></tr>
 						<tr><td>Nishant Kumar</td><td>9993261470</td></tr>

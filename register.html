@@ -4,7 +4,6 @@
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<meta name="description" content="Official site for IIT Indore's annual cultural and technical festival">
 	<link href="favicon.ico" rel="icon" type="image/x-icon" />
-	<script type="text/javascript" src="js/jquery.js"></script>
 	<style type="text/css">
 	#register{	
 		z-index:10;
@@ -44,7 +43,6 @@
 	</style>
 </head>
 <body>
-	<script type="text/javascript" src="js/index.js"></script>
 	<div id="main" class="abswrap">
 		<div id="navbar" class="fixwrap" style="">
 			<center>
@@ -80,24 +78,25 @@
 						<td><input class="redbutton" type="submit" value="Register"></td> 
 						<td><input class="redbutton" type="reset" value="Reset"></td>
 					</tr>
+					<tr><td><a href="/forgot.html">Forgot your fluxus ID?</a></td></tr>
 				</table>
 				</form>
 				</center>
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript">
-		$("#regForm").submit(function(){
-			$.post('ajax/register.php', $(this).serializeArray(), function(data) {
-				if(data.indexOf('success')!=-1){
-					$('#regForm tbody').fadeOut('fast');
-					$('#regForm tbody').html(data);
-					$('#regForm tbody').fadeIn('fast');
-				}else alert(data);
-			});
-			return false;
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$("#regForm").submit(function(){
+		$.post('ajax/register.php', $(this).serializeArray(), function(data) {
+			if(data.indexOf('success')!=-1){
+				$('#regForm tbody').fadeOut('fast');
+				$('#regForm tbody').html(data);
+				$('#regForm tbody').fadeIn('fast');
+			}else alert(data);
 		});
-	</script>
+		return false;
+	});
+</script>
 </body>
 </html>

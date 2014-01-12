@@ -76,9 +76,11 @@ var events = {
 		animateOnce("#events .details",'slideOutUp',function(){
 			$("#events .img")[0].src = w.img;
 			$("#events .title").html(w.title);
-			if(!w.reglink){
-				// $("#events .abst").html('<form id="evtregform">Fluxus ID: <input type="text" name="fluxusid" style="padding: 5px 15px;font: 100% MouseMemoirs;margin: 0 20px;background: rgba(255,255,255,0.5);border: 0;"><input type="hidden" name="eventid" value="'+w.eventid+'"><input type="submit" value="Participate!" style="padding: 5px 15px;font: 100% Carnevalee;margin: 0 20px;cursor:pointer;"></form><br>'+w.abstract);
-				$("#events .abst").html(w.abstract);
+			if(!w.hasOwnProperty('reglink')||(w.hasOwnProperty('reglink')&&!w.reglink)){
+				if(events.current=='workshop'){
+					$("#events .abst").html('<form id="evtregform">Fluxus ID: <input type="text" name="fluxusid" style="padding: 5px 15px;font: 100% MouseMemoirs;margin: 0 20px;background: rgba(255,255,255,0.5);border: 0;"><input type="hidden" name="eventid" value="'+w.eventid+'"><input type="submit" value="Participate!" style="padding: 5px 15px;font: 100% Carnevalee;margin: 0 20px;cursor:pointer;"></form><br>'+w.abstract);
+				}
+				$("#events .abst").html($("#events .abst").html()+w.abstract);
 			}else{
 				$("#events .abst").html('<div style=\"color:#cc9900\">Registration Link:</div><a target="_blank" href=\"'+w.reglink+'\">'+w.reglink+'</a><br>'+w.abstract);
 			}
@@ -86,11 +88,6 @@ var events = {
 			$("#events .abst").append(w.etc);
 			$("#evtregform").submit(function(){
 				$.post('ajax/evtReg.php', $(this).serializeArray(), function(data) {
-					// if(data.indexOf('success')!=-1){
-					// 	$('#regForm tbody').fadeOut('fast');
-					// 	$('#regForm tbody').html(data);
-					// 	$('#regForm tbody').fadeIn('fast');
-					// }else 
 					alert(data);
 				});
 				return false;
@@ -133,6 +130,10 @@ var events = {
 			case "quiz":
 				$("#events")[0].style.background="rgba(15,15,0,0.85)";
 				jsonfile = 'https://googledrive.com/host/0B7gpUuZnCjpdWGFKOG5VbzExV00/quiz.json';
+				break;
+			case "literary":
+				$("#events")[0].style.background="rgba(15,15,0,0.85)";
+				jsonfile = 'https://googledrive.com/host/0B7gpUuZnCjpdWGFKOG5VbzExV00/literary.json';
 				break;
 			case "proshows":
 			default:
