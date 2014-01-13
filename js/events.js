@@ -73,8 +73,20 @@ var events = {
 				break;
 			}
 		}
+		var loadingimg = '';
+		var nimgload = false;
+		var nimg = new Image();
+		nimg.src = w.img;
+		nimg.onload = function(){
+			console.log(1);
+			nimgload = true;
+			if(($("#events .img")[0].src == loadingimg)||($("#events .img")[0].src == 'http://fluxus.in/events.html'))
+				$("#events .img")[0].src = w.img;
+		};
+		if(w.img=='') {console.log('sa');nimg.onload();}
 		animateOnce("#events .details",'slideOutUp',function(){
-			$("#events .img")[0].src = w.img;
+			if(nimgload) $("#events .img")[0].src = w.img;
+			else $("#events .img")[0].src = loadingimg;
 			$("#events .title").html(w.title);
 			if(!w.hasOwnProperty('reglink')||(w.hasOwnProperty('reglink')&&!w.reglink)){
 				if(events.current=='workshop'){

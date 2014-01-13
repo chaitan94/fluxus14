@@ -6,25 +6,6 @@ var preloadimgs = [
 	'img/gateopen.png',
 	'img/loadingbg.jpg',
 	'img/homemask.png',
-	'img/events/tech/AADC.jpg',
-	'img/events/tech/Quizzes.jpg',
-	'img/events/tech/AquaRobotics.jpg',
-	'img/events/tech/CIDCALCULATOR.jpg',
-	'img/events/tech/Struttura.jpg',
-	'img/events/tech/TailSpin.jpg',
-	'img/events/tech/Roboone.jpg',
-	'img/events/tech/MonsterWheels.jpg',
-	'img/events/tech/LicenseToKill.jpg',
-	'img/events/tech/EyeBotSoccer.jpg',
-	'img/events/tech/Enigma.jpg',
-	'img/events/tech/DivideByZero.jpg',
-	'img/events/cult/Dance.jpg',
-	'img/events/cult/Dramatics.jpg',
-	'img/events/cult/Painting.jpg',
-	'img/events/cult/shutter bug.jpg',
-	'img/events/cult/treasure raider.jpg',
-	'img/events/cult/Voice of fluxus.jpg',
-	'img/events/cult/movie making.jpg',
 	'img/team/vibhor.jpg',
 	'img/team/anupreet.jpg',
 	'img/team/deepakr.jpg',
@@ -34,10 +15,7 @@ var preloadimgs = [
 	'img/team/kaushik.jpg',
 	'img/team/palani.jpg',
 	'img/team/vaibhav.jpg',
-	'img/team/yogesh.jpg',
-	'img/marathon.png',
-	'img/kreatrix.png',
-	'img/survey.jpg'
+	'img/team/yogesh.jpg'
 ]
 var imgs = [];
 for (var i = 0; i < preloadimgs.length; i++) {
@@ -45,14 +23,23 @@ for (var i = 0; i < preloadimgs.length; i++) {
 	imgs[i].src=preloadimgs[i];
 };
 
-var gateevent = function(event) {
-	if(event.pageY>72*window.innerHeight/100){
-		$("#gate")[0].src = "img/gateopen.png";
-		animateOnce('#loading','tada');
-	}
-	else $("#gate")[0].src = "img/gateclosed.png";
-};
+// if(!loaded){
+	var gateevent = function(event) {
+		if(event.pageY>72*window.innerHeight/100){
+			$("#gate")[0].src = "img/gateopen.png";
+			animateOnce('#loading','tada');
+		}
+		else $("#gate")[0].src = "img/gateclosed.png";
+	};
+// }
+
 $(window).on("mousemove",gateevent);
+
+var gohome = function(e){
+	window.body.innerHTML = window.body.innerHTML+'<form id="homeform" style=\'display:none;\' method=\'POST\' action=\'/\'><input type=\'hidden\' name=\'loaded\' value=\'1\'></form>';
+	$('#homeform').submit();
+	return false;
+}
 
 $('#content > div').hide();
 $('#modals > div').hide();
@@ -83,11 +70,7 @@ $(window).off("mousemove",gateevent);
 			$('#preloader').fadeOut(200);
 			$(window).off("mousemove",gateevent);
 		});
-		$('#navbar ul li').click(function(){
-					$('#navbar ul li').removeClass("active");               
-   					$(this).addClass("active");
-					openCntPg($(this)[0].dataset.name); });
-					});
+	});
 	$(document).keyup(function(e){if(e.which==27){animateOnce('#modals > div','bounceOut',function(){$('#modals > div').hide();});} });
 	$('.modal-close').click(function(e){animateOnce('#modals > div','bounceOut',function(){$('#modals > div').hide();});});
 	$('#loading').fadeIn(100);
@@ -105,8 +88,6 @@ var topic = function(titletext,name,img,hoverimg){
 	this.name = name;
 	this.img = new Image();
 	this.img.src = "img/topics/"+img;
-	// this.hoverimg = new Image();
-	// this.hoverimg.src = "img/topics/"+hoverimg;
 	this.x = 0;
 	this.y = 0;
 	this.dom = document.createElement("div");

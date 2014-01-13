@@ -7,14 +7,22 @@
 	<link href="favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<?php
+$loaded = 0;
+if(isset($_POST['loaded'])){
+	$loaded = $_POST['loaded'];
+	unset($_POST);
+}
+echo '<script>var loaded='.$loaded.'</script>';
+if(!$loaded){
+?>
 	<div id="jpreContent" class="fixwrap">
 		<div style="position:absolute;top:27%;width:100%;">
 		<div style="position:relative;width:27%;margin:0 auto;">
 		</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<!--script type="text/javascript" src="js/jquery.js"></script-->
 	<script type="text/javascript" src="js/jpreloader.min.js"></script>
 	<script type="text/javascript">
 	   $(document).ready(function() {
@@ -28,11 +36,13 @@
 		<img id="gate" src="img/loadingtitle.png" style="position:fixed;bottom:0;width:100%;">
 		<div id="loading">ENTER</div>
 	</div>
+<?php } ?>
 	<div id="main" class="abswrap">
+	<?php if($loaded) echo '<canvas id="confetti"></canvas>';?>
 		<div id="navbar" class="fixwrap" style="">
 			<center>
 				<ul>
-					<a href="home.html"><li data-name="home">Home</li></a>
+					<a href="/" onclick="return gohome();"><li data-name="home">Home</li></a>
 					<a href="about_us.html"><li data-name="about">About Us</li></a>
 					<a href="events.html#proshows"><li data-name="proshows">Pro-Shows</li></a>
 					<a href="events.html#tech"><li data-name="tech">Tech Theatre</li></a>
@@ -40,13 +50,16 @@
 					<a href="events.html#workshop"><li data-name="workshop">Workshops</li></a>
 					<a href="social.html"><li data-name="social">Social Cause</li></a>
 					<a href="sponsors.html"><li data-name="sponsors">Sponsors</li></a>
-					<a href="home.html"><li data-name="home" class="nav-right"><img height="25" src="img/logo.png"></li></a>
+					<a href="/" onclick="return gohome();"><li data-name="home" class="nav-right"><img height="25" src="img/logo.png"></li></a>
 					<a href="contact_us.html"><li data-name="team" class="nav-right">Contact Us</li></a>
 					<a href="register.html"><li data-name="register" class="nav-right">Register</li></a>
 				</ul>
 			</center>
 		</div>
-		<a href="/hospitality/"><div id="tent"><img height="150" src="img/tent.png"><br><div style="margin-top:-15px">Hospitality</div></div></a>
+		<div class="tent">
+			<div><a href="/hospitality/"><img height="60" src="img/tent.png"><div>Hospitality</div></a></div>
+			<div><a href="/engendea/"><img height="60" src="img/engendea.png"><div>Engendea 1.0</div></a></div>
+		</div>
 		<div id="sidebar">
             <div id="sidebarmenu">
              <b>U<br>P<br>D<br>A<br>T<br>E<br>S</b>
@@ -54,25 +67,19 @@
             <div id="sidebaritems">
             <ul>
               <a href="/mun/" style="text-decoration:none;"><li>MUN Registratoins open.</li></a>
-              <a href="https://play.google.com/store/apps/details?id=com.IITI.fluxus14" target="_blank" style="text-decoration:none;"><li>Android App launched.</li></a>
-              <a href="http://www.windowsphone.com/en-us/store/app/fluxus-2014/071acb86-75f9-4e6b-8f2a-05ad960ed13f" target="_blank" style="text-decoration:none;"><li>Windows phone app launched.</li></a>
               <a href="events.html#tech/aadc" style="text-decoration:none;"><li>Android Application Development Challenge.</li></a>
               <a href="data/fluxus_bhopal_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the Bhopal college ambassadors</li></a>
               <a href="data/fluxus_indore_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the Indore college ambassadors</li></a>
               <a href="data/fluxus_mp_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the MP college ambassadors</li></a>
               <a href="data/fluxus_omp_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the non-MP college ambassadors</li></a>
-              <a href="events.html#tech" style="text-decoration:none;"><li>Registrations now open for all Tech Theatre events.</li></a>
             </ul>
             </div>
         </div>
 		<div id="content">
 			<div id="home" class="abswrap">
-				<div style="position:relative;top:30%;width:26%;margin:0 auto;">
-					<img id="redmask" style="width:100%;" src="img/homemask.png"></img>
-					<div id="date" style="display:none;margin-top:-112%;margin-left:36%;letter-spacing:2px;font-family:'Mouse Memoirs';">
-						<span style="font-size:35;color:black;">7th - 9th</span><br>
-						<span style="font-size:23;color:black;margin-left:20%;">feb 2014</span>
-					</div>
+				<div style="position:relative;top:25%;width:26%;margin:0 auto;">
+					<img style="width:40%;display: block;margin-left: auto;margin-right: auto;" src="img/dates.png"></img>
+					<img id="redmask" style="width:80%; margin-top:-15px;display: block;margin-left: auto;margin-right: auto;" src="img/homemask.png"></img>
 				</div>
 				<div class="homefoot">
 					<div class="left side">
@@ -112,5 +119,16 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="js/index.js"></script>
+<script>
+//DO NOT TOUCH!!!
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43688607-1', 'fluxus.in');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>

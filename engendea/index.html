@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title>Engendea | Fluxus 2014</title>
+	<link rel="stylesheet" type="text/css" href="/css/base.css">
+	<meta name="description" content="Official site for IIT Indore's annual cultural and technical festival">
+	<style type="text/css">
+.contt{
+	text-align: center;
+	background-size: 100% 80%;
+	font: 140% 'Mouse Memoirs';
+	color: rgba(0,0,0,0.7);
+	padding: 30px 200px;
+	height:80%;
+}</style>
+</head>
+<body>
+	<div id="main" class="abswrap">
+		<div id="navbar" class="fixwrap" style="">
+			<center>
+				<ul>
+					<a href="/home.html"><li data-name="home">Home</li></a>
+					<a href="/about_us.html"><li data-name="about">About Us</li></a>
+					<a href="/events.html#proshows"><li data-name="proshows">Pro-Shows</li></a>
+					<a href="/events.html#tech"><li data-name="tech">Tech Theatre</li></a>
+					<a href="/events.html#cult"><li data-name="cult">Performing Arts</li></a>
+					<a href="/events.html#workshop"><li data-name="workshop">Workshops</li></a>
+					<a href="/social.html"><li data-name="social">Social Cause</li></a>
+					<a href="/sponsors.html"><li data-name="sponsors">Sponsors</li></a>
+					<a href="/home.html"><li data-name="home" class="nav-right"><img height="25" src="/img/logo.png"></li></a>
+					<a href="/contact_us.html"><li data-name="team" class="nav-right">Contact Us</li></a>
+					<a href="/register.html"><li data-name="register" class="nav-right">Register</li></a>
+				</ul>
+			</center>
+		</div>
+		<div class="contt clearfix"><img src="img/steve.jpg" style="width:100%"><br><br>
+			Entrepreneurship is THE energy which has the capacity to change this world as it has been doing all the while. We at IIT Indore worship the concept of entrepreneurship and have staged one of a kind event for people who have that burning flair to change the status quo.<br> FLUXUS 2014 here presents this opportunity in<br><div style="font:200% Carnevalee;color:#000;">ENGENDEA 1.0</div>A one of a kind business plan competition where particapating teams have to design a business plan to solve any of the problems existing in our society or create something which might usher a demand which never existed . The submitted entries will be subject to various marking policies and the selected  teams would be invited to participate in the event where their plan would be subjected to some really mind throttling situations , but still real.Exciting as it may sound, it just might be your ticket to really implementing your business plan  in the real world. If you get the drift, gear up cause stakes are really high.<br><br>Submit your B-Plan at : engendea1.0@gmail.com<br>Deadline for submission: 29th January 2014<br><br>
+			<div style="margin:20px 0;width:100%;">
+				<div style="text-align:left;font-size:120%;float:left;width:33.33%;margin:20px 0;">For Details, contact:<br>
+					<table style="font-size:80%;">
+						<tr><td>Aditya Singh</td><td>+91 7354449271</td></tr>
+						<tr><td>Ravi Kiran</td><td>+91 9589164021</td></tr>
+					</table>
+				</div>
+				<div style="width:33.33%;float:left;">
+				<a href="engendea_rules.doc" style="font: 100% 'Mouse Memoirs';color:white;text-decoration:none;" download><span class="redbutton">Download Rules and Guidelines</span></a><br><br>
+				<form id="evtregform">
+					Fluxus ID: <input type="text" name="fluxusid" style="padding: 5px 15px;font: 100% MouseMemoirs;margin: 0 20px;background: rgba(255,255,255,0.5);border: 0;"><input type="hidden" name="eventid" value="engendea"><input type="submit" value="Participate!" style="padding: 5px 15px;font: 100% Carnevalee;margin: 0 20px;cursor:pointer;">
+				</form>
+				</div>
+				<div style="width:33.33%;float:left;">Powered By:
+				<img src="img/NEN.png" style="width:80%;">
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$("#evtregform").submit(function(){
+	$.post('/ajax/evtReg.php', $(this).serializeArray(), function(data) {
+		alert(data);
+	});
+	return false;
+});
+</script>
+</body>
+</html>
