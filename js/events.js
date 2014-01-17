@@ -18,7 +18,6 @@ window.onhashchange = function(){
 			$("#events .img")[0].src=null;
 			$("#events .abst").html('');
 			$("#events .title").html('');
-			console.log(211);
 			events.open(a,b);
 			for (var i = 0; i < $("#navbar ul a").length; i++) {
 				if($("#navbar ul a li")[i].dataset.name==a) {$($("#navbar ul a")[i]).addClass('active'); }
@@ -79,6 +78,7 @@ var events = {
 		var nimg = new Image();
 		nimg.src = w.img;
 		nimg.onload = function(){
+			console.log(1);
 			nimgload = true;
 			if(($("#events .img")[0].src == loadingimg)||($("#events .img")[0].src == 'http://fluxus.in/events.html'))
 				$("#events .img")[0].src = w.img;
@@ -89,9 +89,10 @@ var events = {
 			else $("#events .img")[0].src = loadingimg;
 			$("#events .title").html(w.title);
 			if(!w.hasOwnProperty('reglink')||(w.hasOwnProperty('reglink')&&!w.reglink)){
-				if(events.current=='workshop'||events.currentEvent=='shutterbug'){
-					$("#events .abst").html('<form id="evtregform">Fluxus ID: <input type="text" name="fluxusid" style="padding: 5px 15px;font: 100% MouseMemoirs;margin: 0 20px;background: rgba(255,255,255,0.5);border: 0;"><input type="hidden" name="eventid" value="'+w.eventid+'"><input type="submit" value="Participate!" style="padding: 5px 15px;font: 100% Carnevalee;margin: 0 20px;cursor:pointer;"></form><a href="/register.html">Register for Fluxus</a> | <a href="/forgot.html">Forgot Fluxus ID?</a><br><br>'+w.abstract);
-				}else $("#events .abst").html(w.abstract);
+				if(events.current=='workshop'){
+					$("#events .abst").html('<form id="evtregform">Fluxus ID: <input type="text" name="fluxusid" style="padding: 5px 15px;font: 100% MouseMemoirs;margin: 0 20px;background: rgba(255,255,255,0.5);border: 0;"><input type="hidden" name="eventid" value="'+w.eventid+'"><input type="submit" value="Participate!" style="padding: 5px 15px;font: 100% Carnevalee;margin: 0 20px;cursor:pointer;"></form><br>'+w.abstract);
+				}
+				$("#events .abst").html($("#events .abst").html()+w.abstract);
 			}else{
 				$("#events .abst").html('<div style=\"color:#cc9900\">Registration Link:</div><a target="_blank" href=\"'+w.reglink+'\">'+w.reglink+'</a><br>'+w.abstract);
 			}

@@ -58,6 +58,7 @@ if(!$loaded){
 		</div>
 		<div class="tent">
 			<div><a href="/hospitality/"><img height="60" src="img/tent.png"><div>Hospitality</div></a></div>
+			<div><a href="/engendea/"><img height="60" src="img/engendea.png"><div>Engendea 1.0</div></a></div>
 		</div>
 		<div id="sidebar">
             <div id="sidebarmenu">
@@ -65,6 +66,7 @@ if(!$loaded){
             </div>
             <div id="sidebaritems">
             <ul>
+              <a href="/mun/" style="text-decoration:none;"><li>MUN Registratoins open.</li></a>
               <a href="events.html#tech/aadc" style="text-decoration:none;"><li>Android Application Development Challenge.</li></a>
               <a href="data/fluxus_bhopal_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the Bhopal college ambassadors</li></a>
               <a href="data/fluxus_indore_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the Indore college ambassadors</li></a>
@@ -101,8 +103,8 @@ if(!$loaded){
 								<a id="hyper" style="text-decoration:none;color:#ff6600;font-size:115%;" href="register.html">Register</a>
 							</div>
 							<div class="middiv" style="line-spacing:4px;">
-		                        <a style="text-decoration:none;margin-left:6px;" href="/engendea/">Engendea 1.0</a>
-		                    </div>
+								<a style="text-decoration:none;margin-left:6px;" href="http://fluxus.in/mun">IITI MUN</a>
+							</div>
 							<div class="middiv" style="line-spacing:4px;">
 								<a id="hyper" style="text-decoration:none;" href="events.html#literary/pottermania">Literary Fest</a>
 							</div>
