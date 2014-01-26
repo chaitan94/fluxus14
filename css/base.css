@@ -132,6 +132,7 @@ background:rgba(200,200,200,0.6);
 	height: 100%;
 }
 .homefoot{
+	z-index: 3;
 	position:fixed;
 	bottom:0;
 	width:100%;
@@ -221,17 +222,21 @@ background:rgba(200,200,200,0.6);
 .tent{
 	position: fixed;
 	z-index: 2;
-	padding: 7% 1%;
+	padding: 3% 1%;
 	left: 0;
 	text-align: center;
 	font: 160% Carnevalee;
 	height: 100%;
 }
 .tent a{
-	color:#555;
+	color: rgb(180,180,180);
+	text-shadow: #000 0 0 5px;
 	text-decoration: none;
 }
-.tent>div{margin:50% 0;}
+.tent a:hover{
+	color:#EEE;
+}
+.tent>div{margin:30% 0;}
 #sidebar{
 	background: rgba(0,0,0,0.5);
 	width: 30px;

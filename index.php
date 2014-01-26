@@ -58,6 +58,8 @@ if(!$loaded){
 		</div>
 		<div class="tent">
 			<div><a href="/hospitality/"><img height="60" src="img/tent.png"><div>Hospitality</div></a></div>
+			<div><a href="events.html#games/intro"><img height="60" src="img/games/game.png"><div>Gaming Events</div></a></div>
+			<a href="http://www.codechef.com/DBYZ2014/"><div style="padding:5px;background:rgba(0,0,0,0.2);border-radius:5px;"><div>Divide by zero</div><div style="font:50% Sans;">Online programming contest</div><div style="font-size">FEB 1st</div></div></a>
 		</div>
 		<div id="sidebar">
             <div id="sidebarmenu">
@@ -65,8 +67,9 @@ if(!$loaded){
             </div>
             <div id="sidebaritems">
             <ul>
-              <a href="/enigma" target="_blank" style="text-decoration:none;"><li>Enigma - Online treasure hunt (18-21 Jan)</li></a>
-              <a href="events.html#tech/aadc" target="_blank" style="text-decoration:none;"><li>Android Application Development Challenge.</li></a>
+              <a href="/hospitality" target="_blank" style="text-decoration:none;"><li>Last date to register for accommodation extended to 30th Jan</li></a>
+              <a href="http://www.codechef.com/DBYZ2014/" target="_blank" style="text-decoration:none;"><li>Divide by Zero @ Feb 1st</li></a>
+	      	  <a href="events.html#games/intro" target="_blank" style="text-decoration:none;"><li>Gaming Events Launched.</li></a>
               <a href="data/fluxus_bhopal_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the Bhopal college ambassadors</li></a>
               <a href="data/fluxus_indore_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the Indore college ambassadors</li></a>
               <a href="data/fluxus_mp_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the MP college ambassadors</li></a>
