@@ -67,6 +67,7 @@ if(!$loaded){
             </div>
             <div id="sidebaritems">
             <ul>
+              <a href="/engendea" target="_blank" style="text-decoration:none;"><li>Deadline for Submission for Engendea 1.0 extended to 5th Feb</li></a>
               <a href="/hospitality" target="_blank" style="text-decoration:none;"><li>Last date to register for accommodation extended to 30th Jan</li></a>
               <a href="http://www.codechef.com/DBYZ2014/" target="_blank" style="text-decoration:none;"><li>Divide by Zero @ Feb 1st</li></a>
 	      	  <a href="events.html#games/intro" target="_blank" style="text-decoration:none;"><li>Gaming Events Launched.</li></a>
