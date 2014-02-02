@@ -42,22 +42,26 @@ if(!$loaded){
 		<div id="navbar" class="fixwrap" style="">
 			<center>
 				<ul>
-					<a href="/" onclick="return gohome();"><li data-name="home">Home</li></a>
+					<a class="active" href="home.html"><li data-name="home">Home</li></a>
 					<a href="about_us.html"><li data-name="about">About Us</li></a>
 					<a href="events.html#proshows"><li data-name="proshows">Pro-Shows</li></a>
 					<a href="events.html#tech"><li data-name="tech">Tech Theatre</li></a>
 					<a href="events.html#cult"><li data-name="cult">Performing Arts</li></a>
+					<a href="events.html#games"><li data-name="games">Gamerz Den</li></a>
 					<a href="events.html#workshop"><li data-name="workshop">Workshops</li></a>
 					<a href="social.html"><li data-name="social">Social Cause</li></a>
+					<a href="/hospitality"><li data-name="games">Hospitality</li></a>
 					<a href="sponsors.html"><li data-name="sponsors">Sponsors</li></a>
-					<a href="/" onclick="return gohome();"><li data-name="home" class="nav-right"><img height="25" src="img/logo.png"></li></a>
+					<a href="home.html"><li data-name="home" class="nav-right"><img height="25" src="img/logo.png"></li></a>
 					<a href="contact_us.html"><li data-name="team" class="nav-right">Contact Us</li></a>
 					<a href="register.html"><li data-name="register" class="nav-right">Register</li></a>
 				</ul>
 			</center>
 		</div>
 		<div class="tent">
-			<div><a href="/hospitality/"><img height="60" src="img/tent.png"><div>Hospitality</div></a></div>
+			<!-- <div><a href="events.html#games"><img height="60" src="img/games/game.png"><div>Gamerz Den</div></a></div> -->
+			<div><a href="/events.html#proshows/popularnite"><div><img src="/img/events/proshows/popularnite.jpg" style="width:220px;"></div><div>ADITI SINGH SHARMA</div><div>Live, 9th Feb</div></a></div>
+			<div><a href="/events.html#proshows/fusionnite"><div><img src="/img/events/proshows/fusionnite.jpg" style="width:220px;"></div><div>ADVAITA</div><div>Live, 8th Feb</div></a></div>
 		</div>
 		<div id="sidebar">
             <div id="sidebarmenu">
@@ -65,8 +69,10 @@ if(!$loaded){
             </div>
             <div id="sidebaritems">
             <ul>
-              <a href="/enigma" target="_blank" style="text-decoration:none;"><li>Enigma - Online treasure hunt (18-21 Jan)</li></a>
-              <a href="events.html#tech/aadc" target="_blank" style="text-decoration:none;"><li>Android Application Development Challenge.</li></a>
+		<a href="/engendea" target="_blank" style="text-decoration:none;"><li>Deadline for Submission of Android App for AADC extended to 2nd Feb</li></a>
+              <a href="/events.html#literary/wordwars" target="_blank" style="text-decoration:none;"><li>Registrations for WordWars extended to 5th Feb</li></a>
+              <a href="/engendea" target="_blank" style="text-decoration:none;"><li>Deadline for Submission for Engendea 1.0 extended to 5th Feb</li></a>
+              <a href="/hospitality" target="_blank" style="text-decoration:none;"><li>Last date to register for accommodation extended to 30th Jan</li></a>
               <a href="data/fluxus_bhopal_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the Bhopal college ambassadors</li></a>
               <a href="data/fluxus_indore_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the Indore college ambassadors</li></a>
               <a href="data/fluxus_mp_ambassadors.pdf" target="_blank" style="text-decoration:none;"><li>List of all the MP college ambassadors</li></a>
@@ -78,7 +84,7 @@ if(!$loaded){
 			<div id="home" class="abswrap">
 				<div style="position:relative;top:25%;width:26%;margin:0 auto;">
 					<img style="width:40%;display: block;margin-left: auto;margin-right: auto;" src="img/dates.png"></img>
-					<img id="redmask" style="width:80%; margin-top:-15px;display: block;margin-left: auto;margin-right: auto;" src="img/homemask.png"></img>
+					<img id="redmask" style="width:70%; margin-top:5px;display: block;margin-left: auto;margin-right: auto;" src="img/ultimatum.png"></img>
 				</div>
 				<div class="homefoot">
 					<div class="left side">
