@@ -224,9 +224,13 @@ var w = events.currentJSON[index];
 						animateOnce("#events .abst",'slideInRight');
 					});
 }
+var r,windpause=300,windspeedrange=2.2,windc=0;
 function update(){
+	if(!windc) r = Math.random()*windspeedrange*2-windspeedrange;
+	windc++;
+	windc%=windpause;
     for(var i=0;i<natoms;i++){
-		atoms[i].x+=atoms[i].sx;
+		atoms[i].x+=Math.sin(atoms[i].y/50.1)*1.5+r;
 		atoms[i].y+=atoms[i].sy;
 		if(atoms[i].x>cnv.width) atoms[i].x=0;
 		else if(atoms[i].x<0) atoms[i].x=cnv.width;
