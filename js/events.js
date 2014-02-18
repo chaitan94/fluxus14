@@ -39,6 +39,7 @@ var animateOnce = function(a,b,c){
 		if(c!=undefined) c();
 	});
 };
+var exceptionalevents=["aadc","kreatrix"];
 var events = {
 	data: [
 		{
@@ -60,10 +61,6 @@ var events = {
 		{
 			"title" : "Quiz Fest",
 			"eventid" : "quiz"
-		},
-		{
-			"title" : "Gaming Events",
-			"eventid" : "games"
 		}
 	],
 	current: '',
@@ -91,12 +88,16 @@ var events = {
 			if(nimgload) $("#events .img")[0].src = w.img;
 			else $("#events .img")[0].src = loadingimg;
 			$("#events .title").html(w.title);
+			$("#events .abst").html("");
+			if(w.hasOwnProperty('timing')&&w.timing)
+				$("#events .abst").append("Timings: "+w.timing+"<br>");
+			$("#events .abst").append("For timings on all events, refer the <a href='/data/Schedule_Fluxus14.pdf' download>Schedule</a><br><br>");
 			if(!w.hasOwnProperty('reglink')||(w.hasOwnProperty('reglink')&&!w.reglink)){
-				if(events.current=='workshop'||events.currentEvent=='shutterbug'||events.currentEvent=='painting'){
-					$("#events .abst").html('<form id="evtregform">Fluxus ID: <input type="text" name="fluxusid" style="padding: 5px 15px;font: 100% MouseMemoirs;margin: 0 20px;background: rgba(255,255,255,0.5);border: 0;"><input type="hidden" name="eventid" value="'+w.eventid+'"><input type="submit" value="Participate!" style="padding: 5px 15px;font: 100% Carnevalee;margin: 0 20px;cursor:pointer;"></form><a href="/register.html">Register for Fluxus</a> | <a href="/forgot.html">Forgot Fluxus ID?</a><br><br>'+w.abstract);
-				}else $("#events .abst").html(w.abstract);
+				if(events.current=='workshop'||events.currentEvent=='shutterbug'){
+					$("#events .abst").append('<form id="evtregform">Fluxus ID: <input type="text" name="fluxusid" style="padding: 5px 15px;font: 100% MouseMemoirs;margin: 0 20px;background: rgba(255,255,255,0.5);border: 0;"><input type="hidden" name="eventid" value="'+w.eventid+'"><input type="submit" value="Participate!" style="padding: 5px 15px;font: 100% Carnevalee;margin: 0 20px;cursor:pointer;"></form><a href="/register.html">Register for Fluxus</a> | <a href="/forgot.html">Forgot Fluxus ID?</a><br><br>'+w.abstract);
+				}else $("#events .abst").append(w.abstract);
 			}else{
-				$("#events .abst").html('<div style=\"color:#cc9900\">Registration Link:</div><a target="_blank" href=\"'+w.reglink+'\">'+w.reglink+'</a><br>'+w.abstract);
+				$("#events .abst").append('<div style=\"color:#cc9900\">Registration Link:</div><a target="_blank" href=\"'+w.reglink+'\">'+w.reglink+'</a><br>'+w.abstract);
 			}
 			if(w.rules) $("#events .abst").append('<br><br><div style="font: 120% Carnevalee;color:rgb(236,220,136);">RULES</div>'+w.rules);
 			$("#events .abst").append(w.etc);
@@ -144,10 +145,6 @@ var events = {
 			case "quiz":
 				$("#events")[0].style.background="rgba(15,15,0,0.85)";
 				jsonfile = 'https://googledrive.com/host/0B7gpUuZnCjpdWGFKOG5VbzExV00/quiz.json';
-				break;
-			case "games":
-				$("#events")[0].style.background="rgba(15,15,0,0.85)";
-				jsonfile = 'https://googledrive.com/host/0B1EgZKOsCGB3ZHJRNmQ5eVdIejg/games.json';
 				break;
 			case "literary":
 				$("#events")[0].style.background="rgba(15,15,0,0.85)";

@@ -100,9 +100,9 @@ html,body{
 	cursor: pointer;
 	color:rgba(255,255,0,0.8);	
 }
-#navbar ul a{
-text-decoration:none;
-color:white;
+a{
+text-decoration:inherit;
+color:inherit;
 }
 .active{
 background-color: rgba(0,0,0,0.7); 
@@ -223,11 +223,16 @@ background:rgba(200,200,200,0.6);
 	position: fixed;
 	z-index: 2;
 	padding: 3% 1%;
-	top:6.5%;
-	left: 0;
 	text-align: center;
 	font: 150% Carnevalee;
 	height: 100%;
+}
+.tent-l{
+	top:6.5%;
+	left: 0;
+}
+.tent-r{
+	right: 0;
 }
 .tent a{
 	color:rgb(28, 28, 28);
@@ -236,7 +241,7 @@ background:rgba(200,200,200,0.6);
 .tent a:hover{
 	color:rgb(82, 28, 28);
 }
-.tent>div{margin:26% 0;}
+.tent>div{margin:22% 0;}
 #sidebar{
 	background: rgba(0,0,0,0.5);
 	width: 40px;

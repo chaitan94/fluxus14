@@ -41,6 +41,9 @@ switch ($urlpar[0]) {
 	case 'statistics':
 		include('stat.php');
 		break;
+	case 'dlinkquiz':
+		include('dlink.html');
+		break;
 	case 'bkc':
 		echo "You're awesome.";
 		break;
