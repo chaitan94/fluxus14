@@ -2,6 +2,5 @@ admin/*
 enigma/*
 m/*
 debug/*
-*.inc.php
 sitemap.xml
 php5.ini
